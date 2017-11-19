@@ -1,0 +1,344 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BDEA10B41FC196F9003456BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEA10B31FC196F9003456BE /* AppDelegate.swift */; };
+		BDEA10B61FC196F9003456BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEA10B51FC196F9003456BE /* ViewController.swift */; };
+		BDEA10B91FC196F9003456BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDEA10B71FC196F9003456BE /* Main.storyboard */; };
+		BDEA10BC1FC196F9003456BE /* Scrambled_Messenger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BDEA10BA1FC196F9003456BE /* Scrambled_Messenger.xcdatamodeld */; };
+		BDEA10BE1FC196F9003456BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDEA10BD1FC196F9003456BE /* Assets.xcassets */; };
+		BDEA10C11FC196F9003456BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDEA10BF1FC196F9003456BE /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BDEA10B01FC196F9003456BE /* Scrambled Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scrambled Messenger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDEA10B31FC196F9003456BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BDEA10B51FC196F9003456BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BDEA10B81FC196F9003456BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BDEA10BB1FC196F9003456BE /* Scrambled_Messenger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Scrambled_Messenger.xcdatamodel; sourceTree = "<group>"; };
+		BDEA10BD1FC196F9003456BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BDEA10C01FC196F9003456BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BDEA10C21FC196F9003456BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BDEA10AD1FC196F9003456BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BDEA10A71FC196F9003456BE = {
+			isa = PBXGroup;
+			children = (
+				BDEA10B21FC196F9003456BE /* Scrambled Messenger */,
+				BDEA10B11FC196F9003456BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BDEA10B11FC196F9003456BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BDEA10B01FC196F9003456BE /* Scrambled Messenger.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BDEA10B21FC196F9003456BE /* Scrambled Messenger */ = {
+			isa = PBXGroup;
+			children = (
+				BDEA10B31FC196F9003456BE /* AppDelegate.swift */,
+				BDEA10B51FC196F9003456BE /* ViewController.swift */,
+				BDEA10B71FC196F9003456BE /* Main.storyboard */,
+				BDEA10BD1FC196F9003456BE /* Assets.xcassets */,
+				BDEA10BF1FC196F9003456BE /* LaunchScreen.storyboard */,
+				BDEA10C21FC196F9003456BE /* Info.plist */,
+				BDEA10BA1FC196F9003456BE /* Scrambled_Messenger.xcdatamodeld */,
+			);
+			path = "Scrambled Messenger";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BDEA10AF1FC196F9003456BE /* Scrambled Messenger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDEA10C51FC196F9003456BE /* Build configuration list for PBXNativeTarget "Scrambled Messenger" */;
+			buildPhases = (
+				BDEA10AC1FC196F9003456BE /* Sources */,
+				BDEA10AD1FC196F9003456BE /* Frameworks */,
+				BDEA10AE1FC196F9003456BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Scrambled Messenger";
+			productName = "Scrambled Messenger";
+			productReference = BDEA10B01FC196F9003456BE /* Scrambled Messenger.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BDEA10A81FC196F9003456BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Aleksander Makedonski";
+				TargetAttributes = {
+					BDEA10AF1FC196F9003456BE = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = BDEA10AB1FC196F9003456BE /* Build configuration list for PBXProject "Scrambled Messenger" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BDEA10A71FC196F9003456BE;
+			productRefGroup = BDEA10B11FC196F9003456BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BDEA10AF1FC196F9003456BE /* Scrambled Messenger */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BDEA10AE1FC196F9003456BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDEA10C11FC196F9003456BE /* LaunchScreen.storyboard in Resources */,
+				BDEA10BE1FC196F9003456BE /* Assets.xcassets in Resources */,
+				BDEA10B91FC196F9003456BE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BDEA10AC1FC196F9003456BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDEA10BC1FC196F9003456BE /* Scrambled_Messenger.xcdatamodeld in Sources */,
+				BDEA10B61FC196F9003456BE /* ViewController.swift in Sources */,
+				BDEA10B41FC196F9003456BE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BDEA10B71FC196F9003456BE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDEA10B81FC196F9003456BE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BDEA10BF1FC196F9003456BE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDEA10C01FC196F9003456BE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BDEA10C31FC196F9003456BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BDEA10C41FC196F9003456BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BDEA10C61FC196F9003456BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T9J39WJJ9G;
+				INFOPLIST_FILE = "Scrambled Messenger/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ChangzhouPanda.Scrambled-Messenger";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BDEA10C71FC196F9003456BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T9J39WJJ9G;
+				INFOPLIST_FILE = "Scrambled Messenger/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ChangzhouPanda.Scrambled-Messenger";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BDEA10AB1FC196F9003456BE /* Build configuration list for PBXProject "Scrambled Messenger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDEA10C31FC196F9003456BE /* Debug */,
+				BDEA10C41FC196F9003456BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDEA10C51FC196F9003456BE /* Build configuration list for PBXNativeTarget "Scrambled Messenger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDEA10C61FC196F9003456BE /* Debug */,
+				BDEA10C71FC196F9003456BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BDEA10BA1FC196F9003456BE /* Scrambled_Messenger.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BDEA10BB1FC196F9003456BE /* Scrambled_Messenger.xcdatamodel */,
+			);
+			currentVersion = BDEA10BB1FC196F9003456BE /* Scrambled_Messenger.xcdatamodel */;
+			path = Scrambled_Messenger.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = BDEA10A81FC196F9003456BE /* Project object */;
+}
