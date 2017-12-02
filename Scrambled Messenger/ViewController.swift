@@ -68,7 +68,9 @@ class ViewController: UIViewController {
         
         let sharedClient = DictionaryAPIClient.sharedClient
         
-        sharedClient.downloadAllDomainsJSONData()
+        sharedClient.downloadAllRegionsJSONData()
+
+
 
         
     }

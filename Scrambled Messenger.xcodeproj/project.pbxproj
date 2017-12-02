@@ -16,6 +16,8 @@
 		BD3EB2341FD2928100171C79 /* JSONResponseData.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BD3EB2331FD2928100171C79 /* JSONResponseData.rtf */; };
 		BD3EB2361FD2A3CB00171C79 /* OxfordRegisters.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BD3EB2351FD2A3CB00171C79 /* OxfordRegisters.rtf */; };
 		BD3EB2381FD2A69A00171C79 /* OxfordDomains.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BD3EB2371FD2A69A00171C79 /* OxfordDomains.rtf */; };
+		BD3EB23B1FD2B39400171C79 /* OxfordFilters.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BD3EB23A1FD2B39400171C79 /* OxfordFilters.rtf */; };
+		BD3EB23D1FD2B4D400171C79 /* OxfordRegions.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BD3EB23C1FD2B4D400171C79 /* OxfordRegions.rtf */; };
 		BD3F25D01FC5580200DA251F /* DGHumanCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F25CF1FC5580200DA251F /* DGHumanCharacter.swift */; };
 		BD42918B1FC5803900EF6D8A /* DGGamePlayConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD42918A1FC5803900EF6D8A /* DGGamePlayConfiguration.swift */; };
 		BD42918D1FC580D000EF6D8A /* DGRenderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD42918C1FC580D000EF6D8A /* DGRenderComponent.swift */; };
@@ -88,6 +90,8 @@
 		BD3EB2331FD2928100171C79 /* JSONResponseData.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = JSONResponseData.rtf; sourceTree = "<group>"; };
 		BD3EB2351FD2A3CB00171C79 /* OxfordRegisters.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = OxfordRegisters.rtf; sourceTree = "<group>"; };
 		BD3EB2371FD2A69A00171C79 /* OxfordDomains.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = OxfordDomains.rtf; sourceTree = "<group>"; };
+		BD3EB23A1FD2B39400171C79 /* OxfordFilters.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = OxfordFilters.rtf; sourceTree = "<group>"; };
+		BD3EB23C1FD2B4D400171C79 /* OxfordRegions.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = OxfordRegions.rtf; sourceTree = "<group>"; };
 		BD3F25CF1FC5580200DA251F /* DGHumanCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGHumanCharacter.swift; sourceTree = "<group>"; };
 		BD42918A1FC5803900EF6D8A /* DGGamePlayConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGGamePlayConfiguration.swift; sourceTree = "<group>"; };
 		BD42918C1FC580D000EF6D8A /* DGRenderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGRenderComponent.swift; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 				BD3EB2371FD2A69A00171C79 /* OxfordDomains.rtf */,
 				BD5584C81FD1572900D79C1A /* EnglishLexicalCategories.rtf */,
 				BD3EB2331FD2928100171C79 /* JSONResponseData.rtf */,
+				BD3EB23A1FD2B39400171C79 /* OxfordFilters.rtf */,
+				BD3EB23C1FD2B4D400171C79 /* OxfordRegions.rtf */,
 			);
 			path = JSONSampleData;
 			sourceTree = "<group>";
@@ -491,8 +497,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD3EB23D1FD2B4D400171C79 /* OxfordRegions.rtf in Resources */,
 				BD3EB2341FD2928100171C79 /* JSONResponseData.rtf in Resources */,
 				BD3EB2381FD2A69A00171C79 /* OxfordDomains.rtf in Resources */,
+				BD3EB23B1FD2B39400171C79 /* OxfordFilters.rtf in Resources */,
 				BDEA10C11FC196F9003456BE /* LaunchScreen.storyboard in Resources */,
 				BDEA10BE1FC196F9003456BE /* Assets.xcassets in Resources */,
 				BD3EB2361FD2A3CB00171C79 /* OxfordRegisters.rtf in Resources */,

@@ -8,6 +8,12 @@
 
 import Foundation
 
+
+struct OxfordAPIURLString{
+    
+    var endpoint: OxfordAPIEndpoint
+}
+
 class DictionaryAPIClient: OxfordDictionaryAPIDelegate{
     
     static let sharedClient = DictionaryAPIClient()
@@ -54,6 +60,22 @@ class DictionaryAPIClient: OxfordDictionaryAPIDelegate{
         
     }
     
+    
+    func downloadAllEndpointFiltersJSONData(forEndpoint endpoint: OxfordAPIEndpoint){
+        
+        let urlRequest = DictionaryAPIClient.getURLRequestForAllEndpointFilter(forEndpoint: endpoint)
+        
+        self.startDataTask(withURLRequest: urlRequest)
+
+    }
+    
+    
+    func downloadAllRegionsJSONData(){
+        
+        let urlRequest =  DictionaryAPIClient.getURLRequestForAllRegionParameterValues()
+        
+        self.startDataTask(withURLRequest: urlRequest)
+    }
     
     func downloadAllRegistersJSONData(){
         
@@ -223,6 +245,12 @@ extension DictionaryAPIClient{
         return configureURLRequest(forURL: url)
     }
     
+    static func getURLRequestForAllRegionParameterValues() -> URLRequest{
+        let url = getURLForAllRegionsRequest()
+        
+        return configureURLRequest(forURL: url)
+    }
+    
     static func getConfiguredURLRequest(forURL url: URL) -> URLRequest{
         
         let urlRequest = configureURLRequest(forURL: url)
@@ -363,16 +391,32 @@ extension DictionaryAPIClient{
     
     static func getURL(forEndpoint endpoint: String, forWord word: String, forLanguage language: String = "en") -> URL{
         
-        let word_id = word.lowercased()
-        
-        let urlString = getURLString(forEndpoint: endpoint, forLanguage: language)
-        
-        let modifiedURLString = "\(urlString)/\(word_id)"
+        let modifiedURLString = getURLString(forEndpoint: endpoint, forWord: word, forLanguage: language)
         
         return URL(string: modifiedURLString)!
         
     }
     
+    static func getURLString(forEndpoint endpoint: String, forWord word: String, forLanguage language: String = "en") -> String{
+        
+        let word_id = word.lowercased()
+        
+        let urlString = getURLString(forEndpoint: endpoint, forLanguage: language)
+        
+        return "\(urlString)/\(word_id)"
+    }
+    
+    
+    
+    
+    static func getURLForAllRegionsRequest(forLanguage language: String = "en") -> URL{
+        
+        let urlString = getURLString(forEndpoint: "regions", forLanguage: language)
+        
+        let url = URL(string: urlString)!
+        
+        return url
+    }
     
     static func getURLForAllRegistersRequest(forLanguage language: String = "en") -> URL{
         
@@ -391,6 +435,16 @@ extension DictionaryAPIClient{
         
         return url
     }
+    
+    static func getURLRequestForAllEndpointFilter(forEndpoint endpoint: OxfordAPIEndpoint) -> URLRequest{
+        
+        let urlString = "\(DictionaryAPIClient.baseURL)/filters/\(endpoint.rawValue)"
+        
+        let url = URL(string: urlString)!
+        
+        return configureURLRequest(forURL: url)
+    }
+   
     
     static func getURLForLexicalCategoriesRequest(forLanguage language: String = "en") -> URL{
         

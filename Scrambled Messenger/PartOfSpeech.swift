@@ -8,6 +8,47 @@
 
 import Foundation
 
+
+
+enum OxfordRegions: String{
+    case north_america
+}
+
+enum OxfordAPIEndpoint: String{
+    
+    case entries, inflections, translations, wordlist
+    
+    enum OxfordAPIFilters{
+        
+        case domains
+        case lexicalCategory
+        case regions
+        case registers
+        case translations
+        case definitions
+        case etymologies
+        case examples
+        case grammaticalFeatures
+        case pronunciations
+        case variantForms
+        
+    }
+    
+    func getAvailableFilters() -> Set<OxfordAPIFilters>{
+        switch self {
+        case .entries:
+            return Set([.definitions,.domains,.etymologies,.examples,.grammaticalFeatures,.lexicalCategory,
+                       .pronunciations,.regions,.registers, .variantForms])
+        case .inflections:
+            return Set([.grammaticalFeatures,.lexicalCategory])
+        case .translations:
+            return Set()
+        case .wordlist:
+            return Set([ .domains,.lexicalCategory,.regions,.registers,.translations])
+        }
+    }
+}
+
 enum OxfordDomains: String{
     case air_force, alcoholic,american_civil_war,american_football,amerindian
     case anatomy,ancient_history,angling,anthropology, archaeology, archery, architecture

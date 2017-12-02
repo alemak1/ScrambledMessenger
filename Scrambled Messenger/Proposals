@@ -3,6 +3,10 @@
 - user can check sentence corpora
 - user can access tweets
 
+- can parse into sentences, then scramble sentences in text, categorize text by sentence length, get index for sentence variety, etc.
+- use python backend to analyze text by features
+- use linked list to build a url
 - word game section
 - testing section
-
+- don't forget to do unit tests, UI tests, asynchronous tests
+- don't forget to use continuous integration
