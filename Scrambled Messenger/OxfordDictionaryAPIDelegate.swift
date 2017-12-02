@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+protocol OxfordDictionaryAPIDelegate{
+    
+    typealias JSONResponse = DictionaryAPIClient.JSONResponse
+    
+    func didFailToConnectToEndpoint(withError error: Error)
+   
+    func didFailToGetJSONData(withHTTPResponse httpResponse: HTTPURLResponse)
+    
+    func didFailToSerializeJSONData(withHTTPResponse httpResponse: HTTPURLResponse)
+   
+    func didFinishReceivingHTTPResponse(withHTTPResponse httpResponse: HTTPURLResponse)
+    
+    func didFinishReceivingJSONData(withJSONResponse jsonResponse: JSONResponse, withHTTPResponse httpResponse: HTTPURLResponse)
+
+    
+}

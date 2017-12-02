@@ -7,3 +7,20 @@
 //
 
 import Foundation
+import SpriteKit
+import GameplayKit
+
+/** The render component is a wrapper for a node that is used to present the object in the scene **/
+
+class RenderComponent: GKComponent{
+    
+    let node = SKNode()
+    
+    override func didAddToEntity() {
+        self.node.entity = self.entity
+    }
+    
+    override func willRemoveFromEntity() {
+        self.node.entity = nil
+    }
+}

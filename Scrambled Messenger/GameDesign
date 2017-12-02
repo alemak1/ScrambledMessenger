@@ -1,0 +1,15 @@
+
+//At the beginning of the game, another users enters text a block of text (alternatively, this text can be retrieved from pre-populated database) which is split into words based on parts of speech using the NSLinguisticTagger;  the mission of the player is to recover all of the words in order to reconstruct the original message, while avoiding obstacles, obtaining upgrades, etc; alternative missions can include getting specific parts of speech (all the nouns in a message, or all the verbs in a message, so that the player can better discern the meeting of hidden texts)
+
+
+//pixelated/cartoonized camera mixed with ARKit 
+//voxel-generated platform backgrounds - First-Person/Platformer/Quasi-3D game
+//reflective plane - adjust camera so that floor is viewed from he size
+//use tesseltated floors
+//use SKSCene as material for shapes - platformers are 2D games played on surface of 3D objects
+//voxel-generated mazes for semi=topdown, zombies games
+
+
+//Google Analytics app for analyzing ad sense information 
+//use replay kit to make videos based on 3D scenes, uploadable to YouTube
+	//allows user to customize characters, content, actions, etc.

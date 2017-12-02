@@ -7,3 +7,8 @@
 //
 
 import Foundation
+import SpriteKit
+
+class TextureAtlasManager{
+    
+}

@@ -8,6 +8,8 @@
 
 import XCTest
 
+@testable import Scrambled_Messenger
+
 class ScrambledMessengerUITests: XCTestCase {
         
     override func setUp() {
@@ -17,6 +19,7 @@ class ScrambledMessengerUITests: XCTestCase {
         
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
+        
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         XCUIApplication().launch()
 
@@ -28,9 +31,33 @@ class ScrambledMessengerUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    /**
+    func testTextInputProcess(){
+        
+        
+        let app = XCUIApplication()
+        
+        let textView = app.otherElements.containing(.staticText, identifier:"Enter Text:").children(matching: .textView).element
+                
+        textView.tap()
+        textView.typeText("The cats run quickly.")
+        
+      
+        let totalNounsLabel = app.staticTexts["totalNouns"]
+        let totalVerbsLabel = app.staticTexts["totalVerbs"]
+        let totalAdverbsLabel = app.staticTexts["totalAdverbs"]
+        
+        XCTAssertNotNil(totalVerbsLabel, "Error: totalVerbs label not present")
+        XCTAssertNotNil(totalVerbsLabel, "Error: totalAdverbs label not present")
+        XCTAssertNotNil(totalVerbsLabel, "Error: totalNouns label not present")
+
+        let submitButton = app.buttons["Submit"]
+        submitButton.tap()
+        
+       
+        
+
     }
+    **/
     
 }

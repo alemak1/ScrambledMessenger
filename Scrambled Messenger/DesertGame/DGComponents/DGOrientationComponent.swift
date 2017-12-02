@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import GameplayKit
+
+class DGOrientationComponent: GKComponent{
+    
+    var direction: DGDirection = .Right
+    
+}

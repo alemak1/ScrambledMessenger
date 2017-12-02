@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+enum DGDirection: String{
+    case Left,Right,Up,Down,None
+    
+    static let allDirections: [DGDirection] = [.Left,.Right,.Up,.Down,.None]
+}

@@ -7,15 +7,118 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD1293681FCC0E2000FD8F9D /* TextureAtlasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1293671FCC0E2000FD8F9D /* TextureAtlasManager.swift */; };
+		BD3773351FCE8C0500EB1DC9 /* LinguisticTaggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3773341FCE8C0500EB1DC9 /* LinguisticTaggerTests.swift */; };
+		BD3773371FCE8C9100EB1DC9 /* TaggerTestData.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD3773361FCE8C9100EB1DC9 /* TaggerTestData.plist */; };
+		BD3773391FCEA29300EB1DC9 /* DictionaryAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3773381FCEA29300EB1DC9 /* DictionaryAPIClient.swift */; };
+		BD37733B1FCEA7AA00EB1DC9 /* OxfordDictionaryAPIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD37733A1FCEA7AA00EB1DC9 /* OxfordDictionaryAPIDelegate.swift */; };
+		BD3ACF401FCECC49002AF99D /* ScrambledMessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3ACF3F1FCECC49002AF99D /* ScrambledMessengerUITests.swift */; };
+		BD3EB2341FD2928100171C79 /* JSONResponseData.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BD3EB2331FD2928100171C79 /* JSONResponseData.rtf */; };
+		BD3EB2361FD2A3CB00171C79 /* OxfordRegisters.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BD3EB2351FD2A3CB00171C79 /* OxfordRegisters.rtf */; };
+		BD3EB2381FD2A69A00171C79 /* OxfordDomains.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BD3EB2371FD2A69A00171C79 /* OxfordDomains.rtf */; };
+		BD3F25D01FC5580200DA251F /* DGHumanCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F25CF1FC5580200DA251F /* DGHumanCharacter.swift */; };
+		BD42918B1FC5803900EF6D8A /* DGGamePlayConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD42918A1FC5803900EF6D8A /* DGGamePlayConfiguration.swift */; };
+		BD42918D1FC580D000EF6D8A /* DGRenderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD42918C1FC580D000EF6D8A /* DGRenderComponent.swift */; };
+		BD42918F1FC5812D00EF6D8A /* DGPhysicsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD42918E1FC5812D00EF6D8A /* DGPhysicsComponent.swift */; };
+		BD4291911FC5815F00EF6D8A /* DGColliderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4291901FC5815F00EF6D8A /* DGColliderType.swift */; };
+		BD4291931FC584A200EF6D8A /* DGIntelligenceComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4291921FC584A200EF6D8A /* DGIntelligenceComponent.swift */; };
+		BD4291961FC58D3100EF6D8A /* DGHumanDeadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4291951FC58D3100EF6D8A /* DGHumanDeadState.swift */; };
+		BD4291981FC58D4400EF6D8A /* DGHumanHurtState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4291971FC58D4400EF6D8A /* DGHumanHurtState.swift */; };
+		BD42919A1FC58D6E00EF6D8A /* DGHumanWinState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4291991FC58D6E00EF6D8A /* DGHumanWinState.swift */; };
+		BD43D3D21FCE756D003E8CA8 /* LinguisticTaggerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD43D3D11FCE756D003E8CA8 /* LinguisticTaggerHelper.swift */; };
+		BD5584C11FD1452100D79C1A /* OxfordAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5584C01FD1452100D79C1A /* OxfordAPIClientTests.swift */; };
+		BD5584C91FD1572900D79C1A /* EnglishLexicalCategories.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BD5584C81FD1572900D79C1A /* EnglishLexicalCategories.rtf */; };
+		BD5584CB1FD1579100D79C1A /* EnglishGrammaticalFeatures.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BD5584CA1FD1579100D79C1A /* EnglishGrammaticalFeatures.rtf */; };
+		BD5584CD1FD1595B00D79C1A /* Proposals in Resources */ = {isa = PBXBuildFile; fileRef = BD5584CC1FD1595B00D79C1A /* Proposals */; };
+		BD7B5ED61FD10A5F004A0C89 /* PartOfSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7B5ED51FD10A5F004A0C89 /* PartOfSpeech.swift */; };
+		BD9BBCDB1FCD856B00C1CAA2 /* DGAnimationComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BBCDA1FCD856B00C1CAA2 /* DGAnimationComponentTests.swift */; };
+		BDA6D9301FC2D072001A3759 /* RenderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6D92F1FC2D072001A3759 /* RenderComponent.swift */; };
+		BDA6D9331FC2D704001A3759 /* CompassOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6D9321FC2D704001A3759 /* CompassOrientation.swift */; };
+		BDA6D9351FC2D71D001A3759 /* OrientationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6D9341FC2D71D001A3759 /* OrientationComponent.swift */; };
+		BDA6D9371FC2D74C001A3759 /* PhysicsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6D9361FC2D74C001A3759 /* PhysicsComponent.swift */; };
+		BDA6D9391FC2D799001A3759 /* ColliderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6D9381FC2D799001A3759 /* ColliderType.swift */; };
+		BDA6D93D1FC2DA3B001A3759 /* DGOrientationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6D93C1FC2DA3B001A3759 /* DGOrientationComponent.swift */; };
+		BDA6D93F1FC2DA60001A3759 /* DGDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6D93E1FC2DA60001A3759 /* DGDirection.swift */; };
+		BDA6D9411FC2DBA4001A3759 /* DGAnimationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6D9401FC2DBA4001A3759 /* DGAnimationComponent.swift */; };
+		BDA6D9431FC2DBB2001A3759 /* AnimationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6D9421FC2DBB2001A3759 /* AnimationComponent.swift */; };
+		BDA6D9451FC2E0AB001A3759 /* GameDesign in Resources */ = {isa = PBXBuildFile; fileRef = BDA6D9441FC2E0AB001A3759 /* GameDesign */; };
+		BDC11E661FCC22B700ADB047 /* DGAnimationComponentTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC11E651FCC22B700ADB047 /* DGAnimationComponentTester.swift */; };
 		BDEA10B41FC196F9003456BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEA10B31FC196F9003456BE /* AppDelegate.swift */; };
 		BDEA10B61FC196F9003456BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEA10B51FC196F9003456BE /* ViewController.swift */; };
 		BDEA10B91FC196F9003456BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDEA10B71FC196F9003456BE /* Main.storyboard */; };
 		BDEA10BC1FC196F9003456BE /* Scrambled_Messenger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BDEA10BA1FC196F9003456BE /* Scrambled_Messenger.xcdatamodeld */; };
 		BDEA10BE1FC196F9003456BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDEA10BD1FC196F9003456BE /* Assets.xcassets */; };
 		BDEA10C11FC196F9003456BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDEA10BF1FC196F9003456BE /* LaunchScreen.storyboard */; };
+		BDEA10C91FC19ECA003456BE /* TextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEA10C81FC19ECA003456BE /* TextManager.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BD3ACF421FCECC49002AF99D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BDEA10A81FC196F9003456BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDEA10AF1FC196F9003456BE;
+			remoteInfo = "Scrambled Messenger";
+		};
+		BD5584C31FD1452100D79C1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BDEA10A81FC196F9003456BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDEA10AF1FC196F9003456BE;
+			remoteInfo = "Scrambled Messenger";
+		};
+		BD9BBCDD1FCD856B00C1CAA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BDEA10A81FC196F9003456BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDEA10AF1FC196F9003456BE;
+			remoteInfo = "Scrambled Messenger";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		BD1293671FCC0E2000FD8F9D /* TextureAtlasManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureAtlasManager.swift; sourceTree = "<group>"; };
+		BD3773341FCE8C0500EB1DC9 /* LinguisticTaggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinguisticTaggerTests.swift; sourceTree = "<group>"; };
+		BD3773361FCE8C9100EB1DC9 /* TaggerTestData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TaggerTestData.plist; sourceTree = "<group>"; };
+		BD3773381FCEA29300EB1DC9 /* DictionaryAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryAPIClient.swift; sourceTree = "<group>"; };
+		BD37733A1FCEA7AA00EB1DC9 /* OxfordDictionaryAPIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxfordDictionaryAPIDelegate.swift; sourceTree = "<group>"; };
+		BD3ACF3D1FCECC49002AF99D /* ScrambledMessengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrambledMessengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD3ACF3F1FCECC49002AF99D /* ScrambledMessengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrambledMessengerUITests.swift; sourceTree = "<group>"; };
+		BD3ACF411FCECC49002AF99D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD3EB2331FD2928100171C79 /* JSONResponseData.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = JSONResponseData.rtf; sourceTree = "<group>"; };
+		BD3EB2351FD2A3CB00171C79 /* OxfordRegisters.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = OxfordRegisters.rtf; sourceTree = "<group>"; };
+		BD3EB2371FD2A69A00171C79 /* OxfordDomains.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = OxfordDomains.rtf; sourceTree = "<group>"; };
+		BD3F25CF1FC5580200DA251F /* DGHumanCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGHumanCharacter.swift; sourceTree = "<group>"; };
+		BD42918A1FC5803900EF6D8A /* DGGamePlayConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGGamePlayConfiguration.swift; sourceTree = "<group>"; };
+		BD42918C1FC580D000EF6D8A /* DGRenderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGRenderComponent.swift; sourceTree = "<group>"; };
+		BD42918E1FC5812D00EF6D8A /* DGPhysicsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGPhysicsComponent.swift; sourceTree = "<group>"; };
+		BD4291901FC5815F00EF6D8A /* DGColliderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGColliderType.swift; sourceTree = "<group>"; };
+		BD4291921FC584A200EF6D8A /* DGIntelligenceComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGIntelligenceComponent.swift; sourceTree = "<group>"; };
+		BD4291951FC58D3100EF6D8A /* DGHumanDeadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGHumanDeadState.swift; sourceTree = "<group>"; };
+		BD4291971FC58D4400EF6D8A /* DGHumanHurtState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGHumanHurtState.swift; sourceTree = "<group>"; };
+		BD4291991FC58D6E00EF6D8A /* DGHumanWinState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGHumanWinState.swift; sourceTree = "<group>"; };
+		BD43D3D11FCE756D003E8CA8 /* LinguisticTaggerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinguisticTaggerHelper.swift; sourceTree = "<group>"; };
+		BD5584BE1FD1452100D79C1A /* OxfordAPIClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OxfordAPIClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD5584C01FD1452100D79C1A /* OxfordAPIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxfordAPIClientTests.swift; sourceTree = "<group>"; };
+		BD5584C21FD1452100D79C1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD5584C81FD1572900D79C1A /* EnglishLexicalCategories.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = EnglishLexicalCategories.rtf; sourceTree = "<group>"; };
+		BD5584CA1FD1579100D79C1A /* EnglishGrammaticalFeatures.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = EnglishGrammaticalFeatures.rtf; sourceTree = "<group>"; };
+		BD5584CC1FD1595B00D79C1A /* Proposals */ = {isa = PBXFileReference; lastKnownFileType = text; path = Proposals; sourceTree = "<group>"; };
+		BD7B5ED51FD10A5F004A0C89 /* PartOfSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOfSpeech.swift; sourceTree = "<group>"; };
+		BD9BBCD81FCD856B00C1CAA2 /* DGAnimationComponentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DGAnimationComponentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD9BBCDA1FCD856B00C1CAA2 /* DGAnimationComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGAnimationComponentTests.swift; sourceTree = "<group>"; };
+		BD9BBCDC1FCD856B00C1CAA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDA6D92F1FC2D072001A3759 /* RenderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderComponent.swift; sourceTree = "<group>"; };
+		BDA6D9321FC2D704001A3759 /* CompassOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassOrientation.swift; sourceTree = "<group>"; };
+		BDA6D9341FC2D71D001A3759 /* OrientationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationComponent.swift; sourceTree = "<group>"; };
+		BDA6D9361FC2D74C001A3759 /* PhysicsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsComponent.swift; sourceTree = "<group>"; };
+		BDA6D9381FC2D799001A3759 /* ColliderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColliderType.swift; sourceTree = "<group>"; };
+		BDA6D93C1FC2DA3B001A3759 /* DGOrientationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGOrientationComponent.swift; sourceTree = "<group>"; };
+		BDA6D93E1FC2DA60001A3759 /* DGDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGDirection.swift; sourceTree = "<group>"; };
+		BDA6D9401FC2DBA4001A3759 /* DGAnimationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGAnimationComponent.swift; sourceTree = "<group>"; };
+		BDA6D9421FC2DBB2001A3759 /* AnimationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationComponent.swift; sourceTree = "<group>"; };
+		BDA6D9441FC2E0AB001A3759 /* GameDesign */ = {isa = PBXFileReference; lastKnownFileType = text; path = GameDesign; sourceTree = "<group>"; };
+		BDC11E651FCC22B700ADB047 /* DGAnimationComponentTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGAnimationComponentTester.swift; sourceTree = "<group>"; };
 		BDEA10B01FC196F9003456BE /* Scrambled Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scrambled Messenger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDEA10B31FC196F9003456BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDEA10B51FC196F9003456BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,9 +127,31 @@
 		BDEA10BD1FC196F9003456BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDEA10C01FC196F9003456BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BDEA10C21FC196F9003456BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDEA10C81FC19ECA003456BE /* TextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BD3ACF3A1FCECC49002AF99D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD5584BB1FD1452100D79C1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD9BBCD51FCD856B00C1CAA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BDEA10AD1FC196F9003456BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -37,10 +162,143 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD3ACF3E1FCECC49002AF99D /* ScrambledMessengerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BD3ACF3F1FCECC49002AF99D /* ScrambledMessengerUITests.swift */,
+				BD3ACF411FCECC49002AF99D /* Info.plist */,
+			);
+			path = ScrambledMessengerUITests;
+			sourceTree = "<group>";
+		};
+		BD3EB2391FD2A6A400171C79 /* JSONSampleData */ = {
+			isa = PBXGroup;
+			children = (
+				BD5584CA1FD1579100D79C1A /* EnglishGrammaticalFeatures.rtf */,
+				BD3EB2351FD2A3CB00171C79 /* OxfordRegisters.rtf */,
+				BD3EB2371FD2A69A00171C79 /* OxfordDomains.rtf */,
+				BD5584C81FD1572900D79C1A /* EnglishLexicalCategories.rtf */,
+				BD3EB2331FD2928100171C79 /* JSONResponseData.rtf */,
+			);
+			path = JSONSampleData;
+			sourceTree = "<group>";
+		};
+		BD3F25CE1FC557F300DA251F /* DGEntities */ = {
+			isa = PBXGroup;
+			children = (
+				BD3F25CF1FC5580200DA251F /* DGHumanCharacter.swift */,
+			);
+			path = DGEntities;
+			sourceTree = "<group>";
+		};
+		BD4291891FC5802700EF6D8A /* DGGameUtils */ = {
+			isa = PBXGroup;
+			children = (
+				BD42918A1FC5803900EF6D8A /* DGGamePlayConfiguration.swift */,
+				BD4291901FC5815F00EF6D8A /* DGColliderType.swift */,
+			);
+			path = DGGameUtils;
+			sourceTree = "<group>";
+		};
+		BD4291941FC58CFF00EF6D8A /* DGHumanCharacterStates */ = {
+			isa = PBXGroup;
+			children = (
+				BD4291951FC58D3100EF6D8A /* DGHumanDeadState.swift */,
+				BD4291971FC58D4400EF6D8A /* DGHumanHurtState.swift */,
+				BD4291991FC58D6E00EF6D8A /* DGHumanWinState.swift */,
+			);
+			path = DGHumanCharacterStates;
+			sourceTree = "<group>";
+		};
+		BD42919B1FC58E2500EF6D8A /* DGStates */ = {
+			isa = PBXGroup;
+			children = (
+				BD4291941FC58CFF00EF6D8A /* DGHumanCharacterStates */,
+			);
+			path = DGStates;
+			sourceTree = "<group>";
+		};
+		BD5584BF1FD1452100D79C1A /* OxfordAPIClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				BD5584C01FD1452100D79C1A /* OxfordAPIClientTests.swift */,
+				BD5584C21FD1452100D79C1A /* Info.plist */,
+			);
+			path = OxfordAPIClientTests;
+			sourceTree = "<group>";
+		};
+		BD9BBCD91FCD856B00C1CAA2 /* ScrambledMessengerTests */ = {
+			isa = PBXGroup;
+			children = (
+				BD3773341FCE8C0500EB1DC9 /* LinguisticTaggerTests.swift */,
+				BD9BBCDA1FCD856B00C1CAA2 /* DGAnimationComponentTests.swift */,
+				BD9BBCDC1FCD856B00C1CAA2 /* Info.plist */,
+			);
+			path = ScrambledMessengerTests;
+			sourceTree = "<group>";
+		};
+		BDA6D92E1FC2D062001A3759 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BDA6D92F1FC2D072001A3759 /* RenderComponent.swift */,
+				BDA6D9341FC2D71D001A3759 /* OrientationComponent.swift */,
+				BDA6D9361FC2D74C001A3759 /* PhysicsComponent.swift */,
+				BDA6D9421FC2DBB2001A3759 /* AnimationComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		BDA6D9311FC2D6F7001A3759 /* GameUtils */ = {
+			isa = PBXGroup;
+			children = (
+				BDA6D9321FC2D704001A3759 /* CompassOrientation.swift */,
+				BDA6D9381FC2D799001A3759 /* ColliderType.swift */,
+				BD1293671FCC0E2000FD8F9D /* TextureAtlasManager.swift */,
+				BD3773361FCE8C9100EB1DC9 /* TaggerTestData.plist */,
+			);
+			path = GameUtils;
+			sourceTree = "<group>";
+		};
+		BDA6D93A1FC2DA15001A3759 /* DesertGame */ = {
+			isa = PBXGroup;
+			children = (
+				BDC11E641FCC22A400ADB047 /* UnitTests */,
+				BD42919B1FC58E2500EF6D8A /* DGStates */,
+				BD4291891FC5802700EF6D8A /* DGGameUtils */,
+				BD3F25CE1FC557F300DA251F /* DGEntities */,
+				BDA6D93B1FC2DA24001A3759 /* DGComponents */,
+			);
+			path = DesertGame;
+			sourceTree = "<group>";
+		};
+		BDA6D93B1FC2DA24001A3759 /* DGComponents */ = {
+			isa = PBXGroup;
+			children = (
+				BDA6D93C1FC2DA3B001A3759 /* DGOrientationComponent.swift */,
+				BDA6D93E1FC2DA60001A3759 /* DGDirection.swift */,
+				BDA6D9401FC2DBA4001A3759 /* DGAnimationComponent.swift */,
+				BD42918C1FC580D000EF6D8A /* DGRenderComponent.swift */,
+				BD42918E1FC5812D00EF6D8A /* DGPhysicsComponent.swift */,
+				BD4291921FC584A200EF6D8A /* DGIntelligenceComponent.swift */,
+			);
+			path = DGComponents;
+			sourceTree = "<group>";
+		};
+		BDC11E641FCC22A400ADB047 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				BDC11E651FCC22B700ADB047 /* DGAnimationComponentTester.swift */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
 		BDEA10A71FC196F9003456BE = {
 			isa = PBXGroup;
 			children = (
 				BDEA10B21FC196F9003456BE /* Scrambled Messenger */,
+				BD9BBCD91FCD856B00C1CAA2 /* ScrambledMessengerTests */,
+				BD3ACF3E1FCECC49002AF99D /* ScrambledMessengerUITests */,
+				BD5584BF1FD1452100D79C1A /* OxfordAPIClientTests */,
 				BDEA10B11FC196F9003456BE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +307,9 @@
 			isa = PBXGroup;
 			children = (
 				BDEA10B01FC196F9003456BE /* Scrambled Messenger.app */,
+				BD9BBCD81FCD856B00C1CAA2 /* DGAnimationComponentTests.xctest */,
+				BD3ACF3D1FCECC49002AF99D /* ScrambledMessengerUITests.xctest */,
+				BD5584BE1FD1452100D79C1A /* OxfordAPIClientTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,6 +317,9 @@
 		BDEA10B21FC196F9003456BE /* Scrambled Messenger */ = {
 			isa = PBXGroup;
 			children = (
+				BDA6D93A1FC2DA15001A3759 /* DesertGame */,
+				BDA6D9311FC2D6F7001A3759 /* GameUtils */,
+				BDA6D92E1FC2D062001A3759 /* Components */,
 				BDEA10B31FC196F9003456BE /* AppDelegate.swift */,
 				BDEA10B51FC196F9003456BE /* ViewController.swift */,
 				BDEA10B71FC196F9003456BE /* Main.storyboard */,
@@ -63,6 +327,14 @@
 				BDEA10BF1FC196F9003456BE /* LaunchScreen.storyboard */,
 				BDEA10C21FC196F9003456BE /* Info.plist */,
 				BDEA10BA1FC196F9003456BE /* Scrambled_Messenger.xcdatamodeld */,
+				BDEA10C81FC19ECA003456BE /* TextManager.swift */,
+				BDA6D9441FC2E0AB001A3759 /* GameDesign */,
+				BD43D3D11FCE756D003E8CA8 /* LinguisticTaggerHelper.swift */,
+				BD3773381FCEA29300EB1DC9 /* DictionaryAPIClient.swift */,
+				BD37733A1FCEA7AA00EB1DC9 /* OxfordDictionaryAPIDelegate.swift */,
+				BD7B5ED51FD10A5F004A0C89 /* PartOfSpeech.swift */,
+				BD3EB2391FD2A6A400171C79 /* JSONSampleData */,
+				BD5584CC1FD1595B00D79C1A /* Proposals */,
 			);
 			path = "Scrambled Messenger";
 			sourceTree = "<group>";
@@ -70,6 +342,60 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BD3ACF3C1FCECC49002AF99D /* ScrambledMessengerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD3ACF461FCECC49002AF99D /* Build configuration list for PBXNativeTarget "ScrambledMessengerUITests" */;
+			buildPhases = (
+				BD3ACF391FCECC49002AF99D /* Sources */,
+				BD3ACF3A1FCECC49002AF99D /* Frameworks */,
+				BD3ACF3B1FCECC49002AF99D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BD3ACF431FCECC49002AF99D /* PBXTargetDependency */,
+			);
+			name = ScrambledMessengerUITests;
+			productName = ScrambledMessengerUITests;
+			productReference = BD3ACF3D1FCECC49002AF99D /* ScrambledMessengerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		BD5584BD1FD1452100D79C1A /* OxfordAPIClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD5584C71FD1452100D79C1A /* Build configuration list for PBXNativeTarget "OxfordAPIClientTests" */;
+			buildPhases = (
+				BD5584BA1FD1452100D79C1A /* Sources */,
+				BD5584BB1FD1452100D79C1A /* Frameworks */,
+				BD5584BC1FD1452100D79C1A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BD5584C41FD1452100D79C1A /* PBXTargetDependency */,
+			);
+			name = OxfordAPIClientTests;
+			productName = OxfordAPIClientTests;
+			productReference = BD5584BE1FD1452100D79C1A /* OxfordAPIClientTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BD9BBCD71FCD856B00C1CAA2 /* DGAnimationComponentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD9BBCE11FCD856B00C1CAA2 /* Build configuration list for PBXNativeTarget "DGAnimationComponentTests" */;
+			buildPhases = (
+				BD9BBCD41FCD856B00C1CAA2 /* Sources */,
+				BD9BBCD51FCD856B00C1CAA2 /* Frameworks */,
+				BD9BBCD61FCD856B00C1CAA2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BD9BBCDE1FCD856B00C1CAA2 /* PBXTargetDependency */,
+			);
+			name = DGAnimationComponentTests;
+			productName = DGAnimationComponentTests;
+			productReference = BD9BBCD81FCD856B00C1CAA2 /* DGAnimationComponentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		BDEA10AF1FC196F9003456BE /* Scrambled Messenger */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDEA10C51FC196F9003456BE /* Build configuration list for PBXNativeTarget "Scrambled Messenger" */;
@@ -97,6 +423,21 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Aleksander Makedonski";
 				TargetAttributes = {
+					BD3ACF3C1FCECC49002AF99D = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BDEA10AF1FC196F9003456BE;
+					};
+					BD5584BD1FD1452100D79C1A = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BDEA10AF1FC196F9003456BE;
+					};
+					BD9BBCD71FCD856B00C1CAA2 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BDEA10AF1FC196F9003456BE;
+					};
 					BDEA10AF1FC196F9003456BE = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -117,17 +458,49 @@
 			projectRoot = "";
 			targets = (
 				BDEA10AF1FC196F9003456BE /* Scrambled Messenger */,
+				BD9BBCD71FCD856B00C1CAA2 /* DGAnimationComponentTests */,
+				BD3ACF3C1FCECC49002AF99D /* ScrambledMessengerUITests */,
+				BD5584BD1FD1452100D79C1A /* OxfordAPIClientTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BD3ACF3B1FCECC49002AF99D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD5584BC1FD1452100D79C1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD9BBCD61FCD856B00C1CAA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BDEA10AE1FC196F9003456BE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD3EB2341FD2928100171C79 /* JSONResponseData.rtf in Resources */,
+				BD3EB2381FD2A69A00171C79 /* OxfordDomains.rtf in Resources */,
 				BDEA10C11FC196F9003456BE /* LaunchScreen.storyboard in Resources */,
 				BDEA10BE1FC196F9003456BE /* Assets.xcassets in Resources */,
+				BD3EB2361FD2A3CB00171C79 /* OxfordRegisters.rtf in Resources */,
+				BD5584CB1FD1579100D79C1A /* EnglishGrammaticalFeatures.rtf in Resources */,
+				BD5584C91FD1572900D79C1A /* EnglishLexicalCategories.rtf in Resources */,
+				BD5584CD1FD1595B00D79C1A /* Proposals in Resources */,
+				BD3773371FCE8C9100EB1DC9 /* TaggerTestData.plist in Resources */,
+				BDA6D9451FC2E0AB001A3759 /* GameDesign in Resources */,
 				BDEA10B91FC196F9003456BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,17 +508,85 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BD3ACF391FCECC49002AF99D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD3ACF401FCECC49002AF99D /* ScrambledMessengerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD5584BA1FD1452100D79C1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD5584C11FD1452100D79C1A /* OxfordAPIClientTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD9BBCD41FCD856B00C1CAA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD3773351FCE8C0500EB1DC9 /* LinguisticTaggerTests.swift in Sources */,
+				BD9BBCDB1FCD856B00C1CAA2 /* DGAnimationComponentTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BDEA10AC1FC196F9003456BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD37733B1FCEA7AA00EB1DC9 /* OxfordDictionaryAPIDelegate.swift in Sources */,
+				BD42918D1FC580D000EF6D8A /* DGRenderComponent.swift in Sources */,
+				BDA6D9351FC2D71D001A3759 /* OrientationComponent.swift in Sources */,
+				BD1293681FCC0E2000FD8F9D /* TextureAtlasManager.swift in Sources */,
+				BD3773391FCEA29300EB1DC9 /* DictionaryAPIClient.swift in Sources */,
+				BD7B5ED61FD10A5F004A0C89 /* PartOfSpeech.swift in Sources */,
+				BD3F25D01FC5580200DA251F /* DGHumanCharacter.swift in Sources */,
+				BD42919A1FC58D6E00EF6D8A /* DGHumanWinState.swift in Sources */,
+				BDEA10C91FC19ECA003456BE /* TextManager.swift in Sources */,
+				BDA6D9301FC2D072001A3759 /* RenderComponent.swift in Sources */,
+				BDA6D93D1FC2DA3B001A3759 /* DGOrientationComponent.swift in Sources */,
+				BDC11E661FCC22B700ADB047 /* DGAnimationComponentTester.swift in Sources */,
 				BDEA10BC1FC196F9003456BE /* Scrambled_Messenger.xcdatamodeld in Sources */,
+				BDA6D9391FC2D799001A3759 /* ColliderType.swift in Sources */,
+				BD4291961FC58D3100EF6D8A /* DGHumanDeadState.swift in Sources */,
+				BDA6D9431FC2DBB2001A3759 /* AnimationComponent.swift in Sources */,
+				BD4291981FC58D4400EF6D8A /* DGHumanHurtState.swift in Sources */,
+				BD42918B1FC5803900EF6D8A /* DGGamePlayConfiguration.swift in Sources */,
+				BDA6D93F1FC2DA60001A3759 /* DGDirection.swift in Sources */,
+				BDA6D9411FC2DBA4001A3759 /* DGAnimationComponent.swift in Sources */,
 				BDEA10B61FC196F9003456BE /* ViewController.swift in Sources */,
 				BDEA10B41FC196F9003456BE /* AppDelegate.swift in Sources */,
+				BD4291931FC584A200EF6D8A /* DGIntelligenceComponent.swift in Sources */,
+				BD4291911FC5815F00EF6D8A /* DGColliderType.swift in Sources */,
+				BD43D3D21FCE756D003E8CA8 /* LinguisticTaggerHelper.swift in Sources */,
+				BDA6D9331FC2D704001A3759 /* CompassOrientation.swift in Sources */,
+				BD42918F1FC5812D00EF6D8A /* DGPhysicsComponent.swift in Sources */,
+				BDA6D9371FC2D74C001A3759 /* PhysicsComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BD3ACF431FCECC49002AF99D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BDEA10AF1FC196F9003456BE /* Scrambled Messenger */;
+			targetProxy = BD3ACF421FCECC49002AF99D /* PBXContainerItemProxy */;
+		};
+		BD5584C41FD1452100D79C1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BDEA10AF1FC196F9003456BE /* Scrambled Messenger */;
+			targetProxy = BD5584C31FD1452100D79C1A /* PBXContainerItemProxy */;
+		};
+		BD9BBCDE1FCD856B00C1CAA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BDEA10AF1FC196F9003456BE /* Scrambled Messenger */;
+			targetProxy = BD9BBCDD1FCD856B00C1CAA2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BDEA10B71FC196F9003456BE /* Main.storyboard */ = {
@@ -167,6 +608,100 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BD3ACF441FCECC49002AF99D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T9J39WJJ9G;
+				INFOPLIST_FILE = ScrambledMessengerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ChangzhouPanda.ScrambledMessengerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Scrambled Messenger";
+			};
+			name = Debug;
+		};
+		BD3ACF451FCECC49002AF99D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T9J39WJJ9G;
+				INFOPLIST_FILE = ScrambledMessengerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ChangzhouPanda.ScrambledMessengerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Scrambled Messenger";
+			};
+			name = Release;
+		};
+		BD5584C51FD1452100D79C1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T9J39WJJ9G;
+				INFOPLIST_FILE = OxfordAPIClientTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ChangzhouPanda.OxfordAPIClientTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Scrambled Messenger.app/Scrambled Messenger";
+			};
+			name = Debug;
+		};
+		BD5584C61FD1452100D79C1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T9J39WJJ9G;
+				INFOPLIST_FILE = OxfordAPIClientTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ChangzhouPanda.OxfordAPIClientTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Scrambled Messenger.app/Scrambled Messenger";
+			};
+			name = Release;
+		};
+		BD9BBCDF1FCD856B00C1CAA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T9J39WJJ9G;
+				INFOPLIST_FILE = DGAnimationComponentTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ChangzhouPanda.DGAnimationComponentTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Scrambled Messenger.app/Scrambled Messenger";
+			};
+			name = Debug;
+		};
+		BD9BBCE01FCD856B00C1CAA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T9J39WJJ9G;
+				INFOPLIST_FILE = DGAnimationComponentTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ChangzhouPanda.DGAnimationComponentTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Scrambled Messenger.app/Scrambled Messenger";
+			};
+			name = Release;
+		};
 		BDEA10C31FC196F9003456BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -307,6 +842,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BD3ACF461FCECC49002AF99D /* Build configuration list for PBXNativeTarget "ScrambledMessengerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD3ACF441FCECC49002AF99D /* Debug */,
+				BD3ACF451FCECC49002AF99D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD5584C71FD1452100D79C1A /* Build configuration list for PBXNativeTarget "OxfordAPIClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD5584C51FD1452100D79C1A /* Debug */,
+				BD5584C61FD1452100D79C1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD9BBCE11FCD856B00C1CAA2 /* Build configuration list for PBXNativeTarget "DGAnimationComponentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD9BBCDF1FCD856B00C1CAA2 /* Debug */,
+				BD9BBCE01FCD856B00C1CAA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BDEA10AB1FC196F9003456BE /* Build configuration list for PBXProject "Scrambled Messenger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

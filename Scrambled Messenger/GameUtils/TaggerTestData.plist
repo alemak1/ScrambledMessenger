@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-   TaggerTestData.plist
-   Scrambled Messenger
-
-   Created by Aleksander Makedonski on 11/29/17.
-   Copyright (c) 2017 Aleksander Makedonski. All rights reserved.
--->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-    
-    </dict>
+<array>
+	<dict>
+		<key>Text</key>
+		<string>The small cats run quickly, and the small dogs run slowly.</string>
+		<key>LexicalConfiguration</key>
+		<dict>
+			<key>pronoun</key>
+			<integer>0</integer>
+			<key>conjunction</key>
+			<integer>1</integer>
+			<key>noun</key>
+			<integer>2</integer>
+			<key>verb</key>
+			<integer>2</integer>
+			<key>determiner</key>
+			<integer>2</integer>
+			<key>adjective</key>
+			<integer>2</integer>
+			<key>adverb</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+</array>
 </plist>
