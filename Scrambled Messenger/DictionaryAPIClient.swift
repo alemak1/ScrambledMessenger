@@ -9,18 +9,18 @@
 import Foundation
 
 
-struct OxfordAPIURLString{
-    
-    var endpoint: OxfordAPIEndpoint
-}
-
 class DictionaryAPIClient: OxfordDictionaryAPIDelegate{
     
     static let sharedClient = DictionaryAPIClient()
     
     /** Base URL, AppID, and AppKey are stored as static constants **/
     
-    private static let baseURL = "https://od-api.oxforddictionaries.com/api/v1"
+    private static let baseURLString = "https://od-api.oxforddictionaries.com/api/v1"
+    
+    private static var baseURL: URL{
+        return URL(string: baseURLString)!
+    }
+    
     private static let appID = "acb61904"
     private static let appKey = "383d6f9739d4974fb81168976b6e991b"
  
@@ -35,7 +35,37 @@ class DictionaryAPIClient: OxfordDictionaryAPIDelegate{
         delegate = self
     }
     
+    
+    
+    /** No validation done here on the filters **/
+    
+    func downloadJSONData(forURLString endpoint: OxfordAPIEndpoint, forWord word: String, andWithFilters filters: [OxfordAPIEndpoint.OxfordAPIFilter], forLanguage language: String = "en"){
+    
+        let baseURL = DictionaryAPIClient.baseURL
+        
+        let endpointStr = "/".appending(endpoint.rawValue)
+        
+        let modifiedURL1 = URL(string: endpointStr, relativeTo: baseURL)
+        
+        let languageStr = "/".appending(language)
+        
+        let modifiedURL2 = URL(string: languageStr, relativeTo: modifiedURL1)
 
+        var wordStr = "/".appending(word)
+        
+        DictionaryAPIClient.processWordQueryParameter(forWord: &wordStr)
+        
+        let modifiedURL3 = URL(string: wordStr, relativeTo: modifiedURL2)
+
+        let filtersStr: String = filters.map({$0.getQueryParameterString(isLastQueryParameter: false)}).reduce("", { $0.appending($1) })
+        
+        let finalURL = URL(string: filtersStr, relativeTo: modifiedURL3)!
+        
+        let urlRequest = DictionaryAPIClient.configureURLRequest(forURL: finalURL)
+        
+        self.startDataTask(withURLRequest: urlRequest)
+        
+    }
   
     func downloadJSONLemmaDatafor(word: String){
         

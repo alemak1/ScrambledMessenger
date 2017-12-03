@@ -9,6 +9,23 @@
 import Foundation
 
 
+enum OxfordAPILanguage: String{
+    case English = "en"
+    case Spanish = "es"
+    case Malay = "ms"
+    case Setswana = "tn"
+    case Swahili = "sw"
+    case NorthernSoho = "nso"
+    case Indonesia = "id"
+    case Latvian = "lv"
+    case Urdu = "ur"
+    case Romanian = "ro"
+    case Hindi = "hi"
+    case German = "de"
+    case Portuguese = "pt"
+    case Tamil = "ta"
+    case Gujarati = "gu"
+}
 
 enum OxfordRegions: String{
     case north_america
@@ -18,33 +35,59 @@ enum OxfordAPIEndpoint: String{
     
     case entries, inflections, translations, wordlist
     
-    enum OxfordAPIFilters{
+    enum OxfordAPIFilter{
         
-        case domains
-        case lexicalCategory
-        case regions
-        case registers
-        case translations
-        case definitions
-        case etymologies
-        case examples
-        case grammaticalFeatures
-        case pronunciations
-        case variantForms
+        case domains([String])
+        case lexicalCategory([String])
+        case regions([String])
+        case registers([String])
+        case translations([String])
+        case definitions([String])
+        case etymologies([String])
+        case examples([String])
+        case grammaticalFeatures([String])
+        case pronunciations([String])
+        case variantForms([String])
         
+        func getQueryParameterString(isLastQueryParameter: Bool) -> String{
+            
+            var queryStr: String
+            
+            switch self {
+            case .lexicalCategory(let parameterValues):
+                queryStr = "lexicalCategory="
+                queryStr = parameterValues.reduce(queryStr, {$0.appending("\($1),")})
+                queryStr.removeLast()
+                break
+            case .grammaticalFeatures(let parameterValues):
+                queryStr = "grammaticalFeatures="
+                queryStr = parameterValues.reduce(queryStr, {$0.appending("\($1),")})
+                queryStr.removeLast()
+                break
+            default:
+                queryStr = String()
+            }
+            
+            
+            if(!isLastQueryParameter){
+                queryStr = queryStr.appending(";")
+            }
+            
+            return queryStr
+        }
     }
     
-    func getAvailableFilters() -> Set<OxfordAPIFilters>{
+    func getAvailableFilters() -> [OxfordAPIFilter]{
         switch self {
         case .entries:
-            return Set([.definitions,.domains,.etymologies,.examples,.grammaticalFeatures,.lexicalCategory,
-                       .pronunciations,.regions,.registers, .variantForms])
+            return [.definitions([]),.domains([]),.etymologies([]),.examples([]),.grammaticalFeatures([]),.lexicalCategory([]),
+                       .pronunciations([]),.regions([]),.registers([]), .variantForms([])]
         case .inflections:
-            return Set([.grammaticalFeatures,.lexicalCategory])
+            return [.grammaticalFeatures([]),.lexicalCategory([])]
         case .translations:
-            return Set()
+            return []
         case .wordlist:
-            return Set([ .domains,.lexicalCategory,.regions,.registers,.translations])
+            return [ .domains([]),.lexicalCategory([]),.regions([]),.registers([]),.translations([])]
         }
     }
 }

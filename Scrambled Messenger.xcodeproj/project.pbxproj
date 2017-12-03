@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29EAD7675E121266524D75BD /* Pods_Scrambled_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B6C8044B08EA3F295AD5DB /* Pods_Scrambled_Messenger.framework */; };
 		BD1293681FCC0E2000FD8F9D /* TextureAtlasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1293671FCC0E2000FD8F9D /* TextureAtlasManager.swift */; };
 		BD3773351FCE8C0500EB1DC9 /* LinguisticTaggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3773341FCE8C0500EB1DC9 /* LinguisticTaggerTests.swift */; };
 		BD3773371FCE8C9100EB1DC9 /* TaggerTestData.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD3773361FCE8C9100EB1DC9 /* TaggerTestData.plist */; };
 		BD3773391FCEA29300EB1DC9 /* DictionaryAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3773381FCEA29300EB1DC9 /* DictionaryAPIClient.swift */; };
 		BD37733B1FCEA7AA00EB1DC9 /* OxfordDictionaryAPIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD37733A1FCEA7AA00EB1DC9 /* OxfordDictionaryAPIDelegate.swift */; };
+		BD39EC061FD3B45F007CB405 /* ObjectiveCBridgingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BD39EC051FD3B45F007CB405 /* ObjectiveCBridgingHeader.m */; };
+		BD39EC081FD3B4D5007CB405 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD39EC071FD3B4D5007CB405 /* Twitter.framework */; };
+		BD39EC0A1FD3C0E9007CB405 /* OxfordAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39EC091FD3C0E9007CB405 /* OxfordAPIRequest.swift */; };
+		BD39EC0C1FD3C17B007CB405 /* OxfordAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39EC0B1FD3C17B007CB405 /* OxfordAPIClient.swift */; };
 		BD3ACF401FCECC49002AF99D /* ScrambledMessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3ACF3F1FCECC49002AF99D /* ScrambledMessengerUITests.swift */; };
 		BD3EB2341FD2928100171C79 /* JSONResponseData.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BD3EB2331FD2928100171C79 /* JSONResponseData.rtf */; };
 		BD3EB2361FD2A3CB00171C79 /* OxfordRegisters.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BD3EB2351FD2A3CB00171C79 /* OxfordRegisters.rtf */; };
@@ -79,11 +84,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43B6C8044B08EA3F295AD5DB /* Pods_Scrambled_Messenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scrambled_Messenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A63233AB9F248887C85CB0C /* Pods-Scrambled Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scrambled Messenger.release.xcconfig"; path = "Pods/Target Support Files/Pods-Scrambled Messenger/Pods-Scrambled Messenger.release.xcconfig"; sourceTree = "<group>"; };
+		971A1BFA3B579894C487BA78 /* Pods-Scrambled Messenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scrambled Messenger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Scrambled Messenger/Pods-Scrambled Messenger.debug.xcconfig"; sourceTree = "<group>"; };
 		BD1293671FCC0E2000FD8F9D /* TextureAtlasManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureAtlasManager.swift; sourceTree = "<group>"; };
 		BD3773341FCE8C0500EB1DC9 /* LinguisticTaggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinguisticTaggerTests.swift; sourceTree = "<group>"; };
 		BD3773361FCE8C9100EB1DC9 /* TaggerTestData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TaggerTestData.plist; sourceTree = "<group>"; };
 		BD3773381FCEA29300EB1DC9 /* DictionaryAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryAPIClient.swift; sourceTree = "<group>"; };
 		BD37733A1FCEA7AA00EB1DC9 /* OxfordDictionaryAPIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxfordDictionaryAPIDelegate.swift; sourceTree = "<group>"; };
+		BD39EC041FD3B45F007CB405 /* Scrambled Messenger-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Scrambled Messenger-Bridging-Header.h"; sourceTree = "<group>"; };
+		BD39EC051FD3B45F007CB405 /* ObjectiveCBridgingHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjectiveCBridgingHeader.m; sourceTree = "<group>"; };
+		BD39EC071FD3B4D5007CB405 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		BD39EC091FD3C0E9007CB405 /* OxfordAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxfordAPIRequest.swift; sourceTree = "<group>"; };
+		BD39EC0B1FD3C17B007CB405 /* OxfordAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxfordAPIClient.swift; sourceTree = "<group>"; };
 		BD3ACF3D1FCECC49002AF99D /* ScrambledMessengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrambledMessengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD3ACF3F1FCECC49002AF99D /* ScrambledMessengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrambledMessengerUITests.swift; sourceTree = "<group>"; };
 		BD3ACF411FCECC49002AF99D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -160,12 +173,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD39EC081FD3B4D5007CB405 /* Twitter.framework in Frameworks */,
+				29EAD7675E121266524D75BD /* Pods_Scrambled_Messenger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8BCA2FBD89147DD9501359A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD39EC071FD3B4D5007CB405 /* Twitter.framework */,
+				43B6C8044B08EA3F295AD5DB /* Pods_Scrambled_Messenger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BD3ACF3E1FCECC49002AF99D /* ScrambledMessengerUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +330,8 @@
 				BD3ACF3E1FCECC49002AF99D /* ScrambledMessengerUITests */,
 				BD5584BF1FD1452100D79C1A /* OxfordAPIClientTests */,
 				BDEA10B11FC196F9003456BE /* Products */,
+				C198781353696D1752CBC8A6 /* Pods */,
+				8BCA2FBD89147DD9501359A8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -341,8 +367,21 @@
 				BD7B5ED51FD10A5F004A0C89 /* PartOfSpeech.swift */,
 				BD3EB2391FD2A6A400171C79 /* JSONSampleData */,
 				BD5584CC1FD1595B00D79C1A /* Proposals */,
+				BD39EC051FD3B45F007CB405 /* ObjectiveCBridgingHeader.m */,
+				BD39EC041FD3B45F007CB405 /* Scrambled Messenger-Bridging-Header.h */,
+				BD39EC091FD3C0E9007CB405 /* OxfordAPIRequest.swift */,
+				BD39EC0B1FD3C17B007CB405 /* OxfordAPIClient.swift */,
 			);
 			path = "Scrambled Messenger";
+			sourceTree = "<group>";
+		};
+		C198781353696D1752CBC8A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				971A1BFA3B579894C487BA78 /* Pods-Scrambled Messenger.debug.xcconfig */,
+				5A63233AB9F248887C85CB0C /* Pods-Scrambled Messenger.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,9 +445,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDEA10C51FC196F9003456BE /* Build configuration list for PBXNativeTarget "Scrambled Messenger" */;
 			buildPhases = (
+				082B7FFDB0EB6422CEF39005 /* [CP] Check Pods Manifest.lock */,
 				BDEA10AC1FC196F9003456BE /* Sources */,
 				BDEA10AD1FC196F9003456BE /* Frameworks */,
 				BDEA10AE1FC196F9003456BE /* Resources */,
+				D1E3C1D8149BDD250C1A884D /* [CP] Embed Pods Frameworks */,
+				F20F7500388EF82B210E07B8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -446,6 +488,7 @@
 					};
 					BDEA10AF1FC196F9003456BE = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -515,6 +558,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		082B7FFDB0EB6422CEF39005 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Scrambled Messenger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1E3C1D8149BDD250C1A884D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Scrambled Messenger/Pods-Scrambled Messenger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F20F7500388EF82B210E07B8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Scrambled Messenger/Pods-Scrambled Messenger-resources.sh",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Scrambled Messenger/Pods-Scrambled Messenger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BD3ACF391FCECC49002AF99D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -554,6 +652,7 @@
 				BD3F25D01FC5580200DA251F /* DGHumanCharacter.swift in Sources */,
 				BD42919A1FC58D6E00EF6D8A /* DGHumanWinState.swift in Sources */,
 				BDEA10C91FC19ECA003456BE /* TextManager.swift in Sources */,
+				BD39EC0C1FD3C17B007CB405 /* OxfordAPIClient.swift in Sources */,
 				BDA6D9301FC2D072001A3759 /* RenderComponent.swift in Sources */,
 				BDA6D93D1FC2DA3B001A3759 /* DGOrientationComponent.swift in Sources */,
 				BDC11E661FCC22B700ADB047 /* DGAnimationComponentTester.swift in Sources */,
@@ -570,8 +669,10 @@
 				BD4291931FC584A200EF6D8A /* DGIntelligenceComponent.swift in Sources */,
 				BD4291911FC5815F00EF6D8A /* DGColliderType.swift in Sources */,
 				BD43D3D21FCE756D003E8CA8 /* LinguisticTaggerHelper.swift in Sources */,
+				BD39EC061FD3B45F007CB405 /* ObjectiveCBridgingHeader.m in Sources */,
 				BDA6D9331FC2D704001A3759 /* CompassOrientation.swift in Sources */,
 				BD42918F1FC5812D00EF6D8A /* DGPhysicsComponent.swift in Sources */,
+				BD39EC0A1FD3C0E9007CB405 /* OxfordAPIRequest.swift in Sources */,
 				BDA6D9371FC2D74C001A3759 /* PhysicsComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -819,14 +920,18 @@
 		};
 		BDEA10C61FC196F9003456BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 971A1BFA3B579894C487BA78 /* Pods-Scrambled Messenger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T9J39WJJ9G;
 				INFOPLIST_FILE = "Scrambled Messenger/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ChangzhouPanda.Scrambled-Messenger";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Scrambled Messenger/Scrambled Messenger-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -834,14 +939,17 @@
 		};
 		BDEA10C71FC196F9003456BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A63233AB9F248887C85CB0C /* Pods-Scrambled Messenger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T9J39WJJ9G;
 				INFOPLIST_FILE = "Scrambled Messenger/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ChangzhouPanda.Scrambled-Messenger";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Scrambled Messenger/Scrambled Messenger-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

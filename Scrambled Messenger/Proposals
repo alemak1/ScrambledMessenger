@@ -2,6 +2,7 @@
 - JSONParserSingleton can be the delegate for the APIClient
 - user can check sentence corpora
 - user can access tweets
+- use other session configurations as an alternative to the shared session configuration
 
 - can parse into sentences, then scramble sentences in text, categorize text by sentence length, get index for sentence variety, etc.
 - use python backend to analyze text by features
@@ -10,3 +11,13 @@
 - testing section
 - don't forget to do unit tests, UI tests, asynchronous tests
 - don't forget to use continuous integration
+
+- notifications for space repetition learning
+- 3D and 2D mini games
+- CoreML combined with dictionary lookup
+- ARKit character that tries to figure out what the object is
+- AppleWatch - timed exercises that use the Apple Watch
+- OCR - optical character recognition - consider adding it
+
+- get twitter feeds - use that as basis for learning
+- connect to YouTube or use Powtoons

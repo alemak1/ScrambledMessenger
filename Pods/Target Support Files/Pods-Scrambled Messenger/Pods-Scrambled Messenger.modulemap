@@ -1,0 +1,6 @@
+framework module Pods_Scrambled_Messenger {
+  umbrella header "Pods-Scrambled Messenger-umbrella.h"
+
+  export *
+  module * { export * }
+}
