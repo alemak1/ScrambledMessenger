@@ -8,29 +8,23 @@
 
 import Foundation
 
-class OxfordAPIClient: OxfordDictionaryAPIDelegate{
+class OxfordAPIClient: URLSessionDelegate{
     
+    typealias JSONResponse = [String: Any]
     static let sharedClient = OxfordAPIClient()
     
     /** Instance variables **/
     
+    private var urlSessionConfiguration: URLSessionConfiguration!
     private var urlSession: URLSession!
-    private var delegate: OxfordDictionaryAPIDelegate?
     
     private init(){
-        urlSession = URLSession.shared
-        delegate = self
-    }
-    
-    func setOxfordDictionaryAPIClientDelegate(with apiDelegate: OxfordDictionaryAPIDelegate){
         
-        self.delegate = apiDelegate
+        urlSessionConfiguration = URLSessionConfiguration.background(withIdentifier: "backgroundSession")
+        urlSession = URLSession(configuration: self.urlSessionConfiguration, delegate: self, delegateQueue: nil)
         
     }
     
-    func resetDefaultDelegate(){
-        self.delegate = self
-    }
     
     
     func downloadExampleSentencesJSONData(forWord word: String){
@@ -56,114 +50,32 @@ class OxfordAPIClient: OxfordDictionaryAPIDelegate{
     
     private func startDataTask(withURLRequest request: URLRequest){
         
-        guard let delegate = self.delegate else {
-            fatalError("Error: no delegate specified for Oxford API download task")
-        }
+   
+        let downloadTask = self.urlSession.downloadTask(with: request)
         
-        _ = self.urlSession.dataTask(with: request, completionHandler: { data, response, error in
-            
-            switch (data,response,error){
-            case (.some,.some,.none),(.some,.some,.some): //Able to connect to the server, data received
-                
-                let httpResponse = (response! as! HTTPURLResponse)
-                
-                
-                if let jsonResponse = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! JSONResponse{
-                    //Data received, and JSON serialization successful
-                    
-                    delegate.didFinishReceivingJSONData(withJSONResponse: jsonResponse, withHTTPResponse: httpResponse)
-                    
-                } else{
-                    //Data received, but JSON serialization not successful
-                    delegate.didFailToGetJSONData(withHTTPResponse: httpResponse)
-                }
-                
-                break
-            case (.none,.some,.none),(.none,.some,.some): //Able to connect to the server but failed to get data or received a bad HTTP Response
-                if let httpResponse = (response as? HTTPURLResponse){
-                    delegate.didFailToGetJSONData(withHTTPResponse: httpResponse)
-                }
-                break
-            case (.none,.none,.some): //Unable to connect to the server, with an error received
-                delegate.didFailToConnectToEndpoint(withError: error!)
-                break
-            case (.none,.none,.none): //Unable to connect to the server, no error received
-                let error = NSError(domain: "Failed to get a response: Error occurred while attempting to connect to the server", code: 0, userInfo: nil)
-                delegate.didFailToConnectToEndpoint(withError: error)
-                break
-            default:
-                break
-            }
-            
-        }).resume()
+    
+        
+        
     }
     
 }
 
 
-
-//MARK: ********* Conformance to DictionaryAPIClient protocol methods
 
 extension OxfordAPIClient{
     
-    /** Unable to establish a connection with the server **/
+    /** URL Session Delegate methods **/
     
-    internal func didFailToConnectToEndpoint(withError error: Error) {
-        
-        print("Error occurred while attempting to connect to the server: \(error.localizedDescription)")
-        
+    func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {
         
     }
     
-    /** Proper credentials are provided, the API request can be authenticated; an HTTP Response is received but no data is provided **/
-    
-    
-    internal func didFailToGetJSONData(withHTTPResponse httpResponse: HTTPURLResponse){
-        print("Unable to get JSON data with http status code: \(httpResponse.statusCode)")
-        showOxfordStatusCodeMessage(forHTTPResponse: httpResponse)
-        
-        
+    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         
     }
     
-    /** Proper credentials are provided, and the API request is fully authenticated; an HTTP Response is received and the data is provided by the raw data could not be parsed into a JSON object **/
-    
-    internal func didFailToSerializeJSONData(withHTTPResponse httpResponse: HTTPURLResponse){
-        
-        print("Unable to serialize the data into a json response, http status code: \(httpResponse.statusCode)")
-        showOxfordStatusCodeMessage(forHTTPResponse: httpResponse)
-        
-    }
-    
-    
-    
-    /** If erroneous credentials are provided, the API request can't be authenticated; an HTTP Response is received but no data is provided **/
-    
-    internal func didFinishReceivingHTTPResponse(withHTTPResponse httpResponse: HTTPURLResponse){
-        
-        print("HTTP response received with status code: \(httpResponse.statusCode)")
-        showOxfordStatusCodeMessage(forHTTPResponse: httpResponse)
-    }
-    
-    /** Proper credentials are provided, and the API request is fully authenticated; an HTTP Response is received and serialized JSON data is provided **/
-    
-    internal func didFinishReceivingJSONData(withJSONResponse jsonResponse: JSONResponse, withHTTPResponse httpResponse: HTTPURLResponse) {
-        
-        print("JSON response received, http status code: \(httpResponse.statusCode)")
-        showOxfordStatusCodeMessage(forHTTPResponse: httpResponse)
-        
-        
-        print("JSON data received as follows:")
-        print(jsonResponse)
-    }
-    
-    func showOxfordStatusCodeMessage(forHTTPResponse httpResponse: HTTPURLResponse){
-        
-        if let oxfordStatusCode = OxfordHTTPStatusCode(rawValue: httpResponse.statusCode){
-            let statusCodeMessage = oxfordStatusCode.statusCodeMessage()
-            print("Status Code Message: \(statusCodeMessage)")
-        }
-        
+    func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
         
     }
 }
+
