@@ -6,6 +6,7 @@
 //  Copyright © 2017 Aleksander Makedonski. All rights reserved.
 //
 
+/**
 import XCTest
 import SpriteKit
 
@@ -130,3 +131,4 @@ class DGAnimationComponentTests: XCTestCase {
     
     
 }
+**/

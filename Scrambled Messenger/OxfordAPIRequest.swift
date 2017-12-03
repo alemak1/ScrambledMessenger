@@ -27,11 +27,57 @@ struct OxfordAPIRequest{
     var hasRequestAntonyms: Bool = false
     var hasRequestedExampleSentences: Bool = false
     
+    /** Different Initializers are used to restrict the range of possible URL strings that can be generated **/
+    
+    
+    
+    init(withWord queryWord: String, hasRequestedExampleSentencesQuery: Bool,forLanguage queryLanguage: OxfordAPILanguage = .English){
+        
+        self.endpoint = OxfordAPIEndpoint.entries
+        self.word = queryWord
+        self.language = OxfordAPILanguage.English
+        self.filters = nil
+        
+        self.hasRequestedExampleSentences = hasRequestedExampleSentencesQuery
+        self.hasRequestedSynonyms = false
+        self.hasRequestAntonyms = false
+    }
+    
+    init(withWord queryWord: String, hasRequestedAntonymsQuery: Bool, hasRequestedSynonymsQuery: Bool, forLanguage queryLanguage: OxfordAPILanguage = .English){
+        
+        self.endpoint = OxfordAPIEndpoint.entries
+        self.word = queryWord
+        self.language = OxfordAPILanguage.English
+        self.filters = nil
+        
+        self.hasRequestedExampleSentences = false
+        self.hasRequestedSynonyms = hasRequestedSynonymsQuery
+        self.hasRequestAntonyms = hasRequestedAntonymsQuery
+    }
+    
     init(withEndpoint queryEndpoint: OxfordAPIEndpoint, withQueryWord queryWord: String, withFilters queryFilters: [OxfordAPIEndpoint.OxfordAPIFilter]?, withQueryLanguage queryLanguage: OxfordAPILanguage = .English){
+        
         self.endpoint = queryEndpoint
         self.word = queryWord
         self.filters = queryFilters
         self.language = queryLanguage
+        
+        self.hasRequestedExampleSentences = false
+        self.hasRequestAntonyms = false
+        self.hasRequestedSynonyms = false
+    }
+    
+    /** Generic default initializers with placeholder values for variables is provided for convenience  **/
+    init(){
+        self.endpoint = OxfordAPIEndpoint.entries
+        self.word = "love"
+        self.language = OxfordAPILanguage.English
+        self.filters = nil
+        
+        self.hasRequestedExampleSentences = false
+        self.hasRequestedSynonyms = false
+        self.hasRequestAntonyms = false
+        
     }
     
     
@@ -41,6 +87,8 @@ struct OxfordAPIRequest{
         
         let url = URL(string: urlString)!
         
+        let urlRequest = getURLRequest(forURL: url)
+    
         return getURLRequest(forURL: url)
     }
     
@@ -82,7 +130,7 @@ struct OxfordAPIRequest{
     private func getURLString() -> String{
         
         
-        let baseURLString = OxfordAPIURLRequest.baseURLString.appending("/")
+        let baseURLString = OxfordAPIRequest.baseURLString.appending("/")
         
         let endpointStr = self.endpoint.rawValue.appending("/")
         
@@ -110,7 +158,7 @@ struct OxfordAPIRequest{
             
             let wordStr = self.getProcessedWord().appending("/")
             
-            let wordURLString = languageURLString.appending(wordStr)
+            var wordURLString = languageURLString.appending(wordStr)
             
             if(self.endpoint == .entries){
                 
@@ -118,32 +166,38 @@ struct OxfordAPIRequest{
                     
                     if(hasRequestedSynonyms && hasRequestAntonyms){
                         
-                        let finalURLString = wordURLString.appending("/synonyms;antonyms")
+                        let finalURLString = wordURLString.appending("synonyms;antonyms")
                         
                         return finalURLString
                         
                     } else if(hasRequestedSynonyms){
                         
-                        let finalURLString = wordURLString.appending("/synonyms")
+                        let finalURLString = wordURLString.appending("synonyms")
                         
                         return finalURLString
                         
                     } else if(hasRequestAntonyms){
                         
-                        let finalURLString = wordURLString.appending("/antonyms")
+                        let finalURLString = wordURLString.appending("antonyms")
                         
                         return finalURLString
                     }
                     
                 } else if(hasRequestedExampleSentences) {
                     
-                    let finalURLString = wordURLString.appending("/sentences")
+                    let finalURLString = wordURLString.appending("sentences")
                     
                     return finalURLString
                     
                 } else if(self.filters != nil) {
                     //Add filters for dictionary entries request for the given word
                     
+                    
+                } else {
+                    
+                    wordURLString.removeLast()
+                    
+                    return wordURLString
                     
                 }
                 
@@ -158,4 +212,7 @@ struct OxfordAPIRequest{
         
         return String()
     }
+    
+    
+
 }

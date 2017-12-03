@@ -17,10 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let twitterConsumerKey = "Rp8ZyJRDeGGqNE1mHAAdn8apb"
     let twitterConsumerSecret = "1EZUpqD1J1FV2ed38RGvy2YwAslKhw86Cynr7slYxwDaMTWYJr"
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
        
-        Twitter.sharedInstance().start(withConsumerKey: twitterConsumerKey, consumerSecret: twitterConsumerSecret)
+       // Twitter.sharedInstance().start(withConsumerKey: twitterConsumerKey, consumerSecret: twitterConsumerSecret)
         
         return true
     }

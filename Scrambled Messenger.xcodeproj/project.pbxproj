@@ -18,6 +18,8 @@
 		BD39EC0A1FD3C0E9007CB405 /* OxfordAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39EC091FD3C0E9007CB405 /* OxfordAPIRequest.swift */; };
 		BD39EC0C1FD3C17B007CB405 /* OxfordAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD39EC0B1FD3C17B007CB405 /* OxfordAPIClient.swift */; };
 		BD3ACF401FCECC49002AF99D /* ScrambledMessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3ACF3F1FCECC49002AF99D /* ScrambledMessengerUITests.swift */; };
+		BD3B697F1FD3CDF000C5A2ED /* OxfordAPIRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B697E1FD3CDF000C5A2ED /* OxfordAPIRequestTests.swift */; };
+		BD3B698C1FD3D35E00C5A2ED /* ScrambledMessengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3B698B1FD3D35E00C5A2ED /* ScrambledMessengerTests.swift */; };
 		BD3EB2341FD2928100171C79 /* JSONResponseData.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BD3EB2331FD2928100171C79 /* JSONResponseData.rtf */; };
 		BD3EB2361FD2A3CB00171C79 /* OxfordRegisters.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BD3EB2351FD2A3CB00171C79 /* OxfordRegisters.rtf */; };
 		BD3EB2381FD2A69A00171C79 /* OxfordDomains.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BD3EB2371FD2A69A00171C79 /* OxfordDomains.rtf */; };
@@ -67,6 +69,13 @@
 			remoteGlobalIDString = BDEA10AF1FC196F9003456BE;
 			remoteInfo = "Scrambled Messenger";
 		};
+		BD3B698E1FD3D35E00C5A2ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BDEA10A81FC196F9003456BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDEA10AF1FC196F9003456BE;
+			remoteInfo = "Scrambled Messenger";
+		};
 		BD5584C31FD1452100D79C1A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BDEA10A81FC196F9003456BE /* Project object */;
@@ -100,6 +109,10 @@
 		BD3ACF3D1FCECC49002AF99D /* ScrambledMessengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrambledMessengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD3ACF3F1FCECC49002AF99D /* ScrambledMessengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrambledMessengerUITests.swift; sourceTree = "<group>"; };
 		BD3ACF411FCECC49002AF99D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD3B697E1FD3CDF000C5A2ED /* OxfordAPIRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxfordAPIRequestTests.swift; sourceTree = "<group>"; };
+		BD3B69891FD3D35E00C5A2ED /* ScrambledMessengerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrambledMessengerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD3B698B1FD3D35E00C5A2ED /* ScrambledMessengerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrambledMessengerTests.swift; sourceTree = "<group>"; };
+		BD3B698D1FD3D35E00C5A2ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD3EB2331FD2928100171C79 /* JSONResponseData.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = JSONResponseData.rtf; sourceTree = "<group>"; };
 		BD3EB2351FD2A3CB00171C79 /* OxfordRegisters.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = OxfordRegisters.rtf; sourceTree = "<group>"; };
 		BD3EB2371FD2A69A00171C79 /* OxfordDomains.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = OxfordDomains.rtf; sourceTree = "<group>"; };
@@ -155,6 +168,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BD3B69861FD3D35E00C5A2ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BD5584BB1FD1452100D79C1A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -197,6 +217,15 @@
 				BD3ACF411FCECC49002AF99D /* Info.plist */,
 			);
 			path = ScrambledMessengerUITests;
+			sourceTree = "<group>";
+		};
+		BD3B698A1FD3D35E00C5A2ED /* ScrambledMessengerTests */ = {
+			isa = PBXGroup;
+			children = (
+				BD3B698B1FD3D35E00C5A2ED /* ScrambledMessengerTests.swift */,
+				BD3B698D1FD3D35E00C5A2ED /* Info.plist */,
+			);
+			path = ScrambledMessengerTests;
 			sourceTree = "<group>";
 		};
 		BD3EB2391FD2A6A400171C79 /* JSONSampleData */ = {
@@ -251,6 +280,7 @@
 		BD5584BF1FD1452100D79C1A /* OxfordAPIClientTests */ = {
 			isa = PBXGroup;
 			children = (
+				BD3B697E1FD3CDF000C5A2ED /* OxfordAPIRequestTests.swift */,
 				BD5584C01FD1452100D79C1A /* OxfordAPIClientTests.swift */,
 				BD5584C21FD1452100D79C1A /* Info.plist */,
 			);
@@ -329,6 +359,7 @@
 				BD9BBCD91FCD856B00C1CAA2 /* ScrambledMessengerTests */,
 				BD3ACF3E1FCECC49002AF99D /* ScrambledMessengerUITests */,
 				BD5584BF1FD1452100D79C1A /* OxfordAPIClientTests */,
+				BD3B698A1FD3D35E00C5A2ED /* ScrambledMessengerTests */,
 				BDEA10B11FC196F9003456BE /* Products */,
 				C198781353696D1752CBC8A6 /* Pods */,
 				8BCA2FBD89147DD9501359A8 /* Frameworks */,
@@ -342,6 +373,7 @@
 				BD9BBCD81FCD856B00C1CAA2 /* DGAnimationComponentTests.xctest */,
 				BD3ACF3D1FCECC49002AF99D /* ScrambledMessengerUITests.xctest */,
 				BD5584BE1FD1452100D79C1A /* OxfordAPIClientTests.xctest */,
+				BD3B69891FD3D35E00C5A2ED /* ScrambledMessengerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -404,6 +436,24 @@
 			productName = ScrambledMessengerUITests;
 			productReference = BD3ACF3D1FCECC49002AF99D /* ScrambledMessengerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		BD3B69881FD3D35E00C5A2ED /* ScrambledMessengerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD3B69901FD3D35E00C5A2ED /* Build configuration list for PBXNativeTarget "ScrambledMessengerTests" */;
+			buildPhases = (
+				BD3B69851FD3D35E00C5A2ED /* Sources */,
+				BD3B69861FD3D35E00C5A2ED /* Frameworks */,
+				BD3B69871FD3D35E00C5A2ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BD3B698F1FD3D35E00C5A2ED /* PBXTargetDependency */,
+			);
+			name = ScrambledMessengerTests;
+			productName = ScrambledMessengerTests;
+			productReference = BD3B69891FD3D35E00C5A2ED /* ScrambledMessengerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		BD5584BD1FD1452100D79C1A /* OxfordAPIClientTests */ = {
 			isa = PBXNativeTarget;
@@ -476,6 +526,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = BDEA10AF1FC196F9003456BE;
 					};
+					BD3B69881FD3D35E00C5A2ED = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BDEA10AF1FC196F9003456BE;
+					};
 					BD5584BD1FD1452100D79C1A = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -510,12 +565,20 @@
 				BD9BBCD71FCD856B00C1CAA2 /* DGAnimationComponentTests */,
 				BD3ACF3C1FCECC49002AF99D /* ScrambledMessengerUITests */,
 				BD5584BD1FD1452100D79C1A /* OxfordAPIClientTests */,
+				BD3B69881FD3D35E00C5A2ED /* ScrambledMessengerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BD3ACF3B1FCECC49002AF99D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD3B69871FD3D35E00C5A2ED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -622,10 +685,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BD3B69851FD3D35E00C5A2ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD3B698C1FD3D35E00C5A2ED /* ScrambledMessengerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BD5584BA1FD1452100D79C1A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD3B697F1FD3CDF000C5A2ED /* OxfordAPIRequestTests.swift in Sources */,
 				BD5584C11FD1452100D79C1A /* OxfordAPIClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -684,6 +756,11 @@
 			isa = PBXTargetDependency;
 			target = BDEA10AF1FC196F9003456BE /* Scrambled Messenger */;
 			targetProxy = BD3ACF421FCECC49002AF99D /* PBXContainerItemProxy */;
+		};
+		BD3B698F1FD3D35E00C5A2ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BDEA10AF1FC196F9003456BE /* Scrambled Messenger */;
+			targetProxy = BD3B698E1FD3D35E00C5A2ED /* PBXContainerItemProxy */;
 		};
 		BD5584C41FD1452100D79C1A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -744,6 +821,38 @@
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Scrambled Messenger";
+			};
+			name = Release;
+		};
+		BD3B69911FD3D35E00C5A2ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T9J39WJJ9G;
+				INFOPLIST_FILE = ScrambledMessengerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ChangzhouPanda.ScrambledMessengerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Scrambled Messenger.app/Scrambled Messenger";
+			};
+			name = Debug;
+		};
+		BD3B69921FD3D35E00C5A2ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T9J39WJJ9G;
+				INFOPLIST_FILE = ScrambledMessengerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ChangzhouPanda.ScrambledMessengerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Scrambled Messenger.app/Scrambled Messenger";
 			};
 			name = Release;
 		};
@@ -963,6 +1072,15 @@
 			buildConfigurations = (
 				BD3ACF441FCECC49002AF99D /* Debug */,
 				BD3ACF451FCECC49002AF99D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD3B69901FD3D35E00C5A2ED /* Build configuration list for PBXNativeTarget "ScrambledMessengerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD3B69911FD3D35E00C5A2ED /* Debug */,
+				BD3B69921FD3D35E00C5A2ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

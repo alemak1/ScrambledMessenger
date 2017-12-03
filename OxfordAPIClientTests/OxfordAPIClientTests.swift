@@ -6,6 +6,7 @@
 //  Copyright © 2017 Aleksander Makedonski. All rights reserved.
 //
 
+/**
 import XCTest
 
 @testable import Scrambled_Messenger
@@ -108,3 +109,4 @@ class OxfordAPIClientTests: XCTestCase {
     }
     
 }
+**/
