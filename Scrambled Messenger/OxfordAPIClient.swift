@@ -22,10 +22,29 @@ class OxfordAPIClient: OxfordDictionaryAPIDelegate{
         delegate = self
     }
     
-    
-    func downloadJSONLemmaDatafor(word: String, withFilters filters: [OxfordAPIEndpoint.OxfordAPIFilter]?){
+    func setOxfordDictionaryAPIClientDelegate(with apiDelegate: OxfordDictionaryAPIDelegate){
         
-        let apiRequest = OxfordAPIRequest(withEndpoint: .inflections, withQueryWord: word, withFilters: filters)
+        self.delegate = apiDelegate
+        
+    }
+    
+    func resetDefaultDelegate(){
+        self.delegate = self
+    }
+    
+    
+    func downloadExampleSentencesJSONData(forWord word: String){
+        
+        let apiRequest = OxfordAPIRequest(withWord: word, hasRequestedExampleSentencesQuery: true, forLanguage: OxfordAPILanguage.English)
+        
+        let urlRequest = apiRequest.generateURLRequest()
+        
+        self.startDataTask(withURLRequest: urlRequest)
+    }
+    
+    func downloadThesaurusJSONData(forWord word: String, withAntonyms hasRequestedAntonyms: Bool, withSynonyms hasRequestedSynonyms: Bool){
+        
+        let apiRequest = OxfordAPIRequest(withWord: word, hasRequestedAntonymsQuery: hasRequestedAntonyms, hasRequestedSynonymsQuery: hasRequestedSynonyms)
         
         let urlRequest = apiRequest.generateURLRequest()
         
@@ -37,6 +56,9 @@ class OxfordAPIClient: OxfordDictionaryAPIDelegate{
     
     private func startDataTask(withURLRequest request: URLRequest){
         
+        guard let delegate = self.delegate else {
+            fatalError("Error: no delegate specified for Oxford API download task")
+        }
         
         _ = self.urlSession.dataTask(with: request, completionHandler: { data, response, error in
             
@@ -49,25 +71,25 @@ class OxfordAPIClient: OxfordDictionaryAPIDelegate{
                 if let jsonResponse = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! JSONResponse{
                     //Data received, and JSON serialization successful
                     
-                    self.didFinishReceivingJSONData(withJSONResponse: jsonResponse, withHTTPResponse: httpResponse)
+                    delegate.didFinishReceivingJSONData(withJSONResponse: jsonResponse, withHTTPResponse: httpResponse)
                     
                 } else{
                     //Data received, but JSON serialization not successful
-                    self.didFailToGetJSONData(withHTTPResponse: httpResponse)
+                    delegate.didFailToGetJSONData(withHTTPResponse: httpResponse)
                 }
                 
                 break
             case (.none,.some,.none),(.none,.some,.some): //Able to connect to the server but failed to get data or received a bad HTTP Response
                 if let httpResponse = (response as? HTTPURLResponse){
-                    self.didFailToGetJSONData(withHTTPResponse: httpResponse)
+                    delegate.didFailToGetJSONData(withHTTPResponse: httpResponse)
                 }
                 break
             case (.none,.none,.some): //Unable to connect to the server, with an error received
-                self.didFailToConnectToEndpoint(withError: error!)
+                delegate.didFailToConnectToEndpoint(withError: error!)
                 break
             case (.none,.none,.none): //Unable to connect to the server, no error received
                 let error = NSError(domain: "Failed to get a response: Error occurred while attempting to connect to the server", code: 0, userInfo: nil)
-                self.didFailToConnectToEndpoint(withError: error)
+                delegate.didFailToConnectToEndpoint(withError: error)
                 break
             default:
                 break

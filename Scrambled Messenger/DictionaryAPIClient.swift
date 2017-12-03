@@ -13,6 +13,8 @@ class DictionaryAPIClient: OxfordDictionaryAPIDelegate{
     
     static let sharedClient = DictionaryAPIClient()
     
+    typealias JSONResponse = [String: Any]
+
     /** Base URL, AppID, and AppKey are stored as static constants **/
     
     private static let baseURLString = "https://od-api.oxforddictionaries.com/api/v1"
@@ -81,7 +83,6 @@ class DictionaryAPIClient: OxfordDictionaryAPIDelegate{
     }
     
     
-    typealias JSONResponse = [String: Any]
  
     
     func setDictionaryAPIDelegate(with apiDelegate: OxfordDictionaryAPIDelegate){
