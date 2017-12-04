@@ -26,6 +26,16 @@ class OxfordAPIRequestTests: XCTestCase {
     var antonymAndSynonymAPIRequest: OxfordAPIRequest!
     var exampleSentencesAPIRequest: OxfordAPIRequest!
 
+    var dictEntryRequestWithRegionFilters: OxfordAPIRequest!
+    
+    var wordListRequestWithDomainFilters: OxfordAPIRequest!
+    var wordListRequestWithRegisterFilters: OxfordAPIRequest!
+    var wordListRequestWithRegisterAndRegionFilters: OxfordAPIRequest!
+    var wordListRequestWithInvalidFilterParameters: OxfordAPIRequest!
+    
+    var dictEntryRequestWithFilters3: OxfordAPIRequest!
+    var dictEntryRequestWithFilters4: OxfordAPIRequest!
+
 
     override func setUp() {
         super.setUp()
@@ -47,6 +57,41 @@ class OxfordAPIRequestTests: XCTestCase {
         antonymAndSynonymAPIRequest = OxfordAPIRequest(withWord: "love", hasRequestedAntonymsQuery: true, hasRequestedSynonymsQuery: true)
         
         exampleSentencesAPIRequest = OxfordAPIRequest(withWord: "love", hasRequestedExampleSentencesQuery: true)
+
+        dictEntryRequestWithRegionFilters = OxfordAPIRequest(withWord: "love", withFilters: [OxfordAPIEndpoint.OxfordAPIFilter.regions([OxfordRegion.us.rawValue])])
+
+        wordListRequestWithDomainFilters = OxfordAPIRequest(
+            withDomainFilters: [OxfordAPIEndpoint.OxfordAPIFilter.domains([OxfordDomains.anatomy.rawValue])],
+            withRegionFilters: [],
+            withRegisterFilters: [],
+            withTranslationsFilters: [],
+            withLexicalCategoryFilters: [],
+            withQueryLanguage: .English)
+        
+        wordListRequestWithRegisterFilters = OxfordAPIRequest(
+            withDomainFilters: [],
+            withRegionFilters: [],
+            withRegisterFilters: [OxfordAPIEndpoint.OxfordAPIFilter.registers([OxfordLanguageRegisters.dialect.rawValue])],
+            withTranslationsFilters: [],
+            withLexicalCategoryFilters: [],
+            withQueryLanguage: .English)
+
+        wordListRequestWithRegisterAndRegionFilters = OxfordAPIRequest(
+            withDomainFilters: [],
+            withRegionFilters: [OxfordAPIEndpoint.OxfordAPIFilter.regions([OxfordRegion.us.rawValue])],
+            withRegisterFilters: [OxfordAPIEndpoint.OxfordAPIFilter.registers([OxfordLanguageRegisters.dialect.rawValue])],
+            withTranslationsFilters: [],
+            withLexicalCategoryFilters: [],
+            withQueryLanguage: .English)
+        
+        wordListRequestWithInvalidFilterParameters = OxfordAPIRequest(withEndpoint: OxfordAPIEndpoint.wordlist, withQueryWord: String(), withFilters: [
+            OxfordAPIEndpoint.OxfordAPIFilter.definitions(["a way of doing stuff"])
+            ])
+        
+        dictEntryRequestWithFilters3 = OxfordAPIRequest()
+        dictEntryRequestWithFilters4 = OxfordAPIRequest()
+
+
 
     }
     
@@ -72,6 +117,65 @@ class OxfordAPIRequestTests: XCTestCase {
         let url = urlRequest.url
         
         XCTAssertNotNil(url)
+    }
+    
+    
+    func testWordListRequestWithInvalidFilterParameters(){
+        
+        
+        
+        XCTAssertThrowsError(
+           
+           try wordListRequestWithInvalidFilterParameters.generateValidatedURLRequest()
+ 
+        , "Test failed: the filter validation method did not throw an error upon receiving invalid filter values", {
+            
+            error in
+            
+            print("The invalid filter parameter threw an error: \(error.localizedDescription)")
+        })
+    }
+    
+    func testWordListRequestWithRegisterAndRegionFilters(){
+        
+        let urlRequest = wordListRequestWithRegisterAndRegionFilters.generateURLRequest()
+        
+        let urlString = urlRequest.url!.absoluteString
+        
+        XCTAssertEqual(urlString, "https://od-api.oxforddictionaries.com/api/v1/wordlist/en/regions=us;registers=dialect", "Test failed: th url associated with the url request is incorrect")
+        
+    }
+    
+    func testWordListRequestWithRegisterFilters(){
+        
+        let urlRequest = wordListRequestWithRegisterFilters.generateURLRequest()
+        
+        let urlString = urlRequest.url!.absoluteString
+        
+        XCTAssertEqual(urlString, "https://od-api.oxforddictionaries.com/api/v1/wordlist/en/registers=dialects", "Test failed: th url associated with the url request is incorrect")
+        
+    }
+    
+    func testWordListRequestWithDomainFilters(){
+        
+        
+        let urlRequest = wordListRequestWithDomainFilters.generateURLRequest()
+        
+        let urlString = urlRequest.url!.absoluteString
+        
+        XCTAssertEqual(urlString, "https://od-api.oxforddictionaries.com/api/v1/wordlist/en/domains=anatomy", "Test failed: th url associated with the url request is incorrect")
+        
+    }
+    
+    func testDictionaryEntryRequestWithRegionFilters(){
+        
+        
+        let urlRequest = dictEntryRequestWithRegionFilters.generateURLRequest()
+        
+        let urlString = urlRequest.url!.absoluteString
+        
+        XCTAssertEqual(urlString, "https://od-api.oxforddictionaries.com/api/v1/entries/en/love/regions=us", "Test failed: th url associated with the url request is incorrect")
+        
     }
     
     func testAPIRequestHeaderFields() {

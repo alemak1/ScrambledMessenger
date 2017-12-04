@@ -1,4 +1,6 @@
 
+- need to test all the registers for the Oxford API dictionary
+
 - JSONParserSingleton can be the delegate for the APIClient
 - user can check sentence corpora
 - user can access tweets
@@ -18,6 +20,10 @@
 - ARKit character that tries to figure out what the object is
 - AppleWatch - timed exercises that use the Apple Watch
 - OCR - optical character recognition - consider adding it
+
+- get notifications from recent twitter feeds
+
+- create an iMessenger App Extension that will use the app to get synonyms and antonyms while typing
 
 - get twitter feeds - use that as basis for learning
 - connect to YouTube or use Powtoons

@@ -66,12 +66,7 @@ class ViewController: UIViewController {
 
        /** DictionaryAPIClient.getJSONDictionaryForWord(word: "love") **/
         
-        let sharedClient = DictionaryAPIClient.sharedClient
-        
-        sharedClient.downloadAllRegionsJSONData()
-
-
-
+      
         
     }
     

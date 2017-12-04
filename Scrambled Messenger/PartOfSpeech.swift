@@ -27,15 +27,75 @@ enum OxfordAPILanguage: String{
     case Gujarati = "gu"
 }
 
-enum OxfordRegions: String{
-    case north_america
+enum OxfordRegion: String{
+    case gb,us
 }
 
 enum OxfordAPIEndpoint: String{
     
     case entries, inflections, translations, wordlist
     
-    enum OxfordAPIFilter{
+    enum OxfordAPIFilter: Hashable{
+        
+        var hashValue: Int{
+            switch self {
+            case .definitions( _):
+                return 0
+            case .domains( _):
+                return 1
+            case .etymologies( _):
+                return 2
+            case .examples( _):
+                return 3
+            case .grammaticalFeatures( _):
+                return 4
+            case .lexicalCategory( _):
+                return 5
+            case .pronunciations( _):
+                return 6
+            case .regions( _):
+                return 7
+            case .registers( _):
+                return 8
+            case .translations( _):
+                return 9
+            case .variantForms( _):
+                return 10
+                
+            }
+        }
+        
+        static func ==(lhs: OxfordAPIEndpoint.OxfordAPIFilter, rhs: OxfordAPIEndpoint.OxfordAPIFilter) -> Bool {
+            return lhs.hashValue == rhs.hashValue
+        }
+        
+        
+        func getDebugName() -> String{
+            switch self {
+            case .domains(_):
+                return "domains"
+            case .lexicalCategory(_):
+                return "lexicalCategory"
+            case .regions(_):
+                return "regions"
+            case .registers(_):
+                return "registers"
+            case .translations(_):
+                return "translations"
+            case .definitions(_):
+                return "definitions"
+            case .etymologies(_):
+                return "etymologies"
+            case .examples(_):
+                return "examples"
+            case .grammaticalFeatures(_):
+                return "grammaticalFeatures"
+            case .pronunciations(_):
+                return "pronunciations"
+            case .variantForms(_):
+                return "variantForms"
+            }
+        }
         
         case domains([String])
         case lexicalCategory([String])
@@ -51,43 +111,86 @@ enum OxfordAPIEndpoint: String{
         
         func getQueryParameterString(isLastQueryParameter: Bool) -> String{
             
-            var queryStr: String
+            var queryString: String
             
             switch self {
             case .lexicalCategory(let parameterValues):
-                queryStr = "lexicalCategory="
-                queryStr = parameterValues.reduce(queryStr, {$0.appending("\($1),")})
-                queryStr.removeLast()
+                queryString = "lexicalCategory="
+                queryString = parameterValues.reduce(queryString, {$0.appending("\($1),")})
+                queryString.removeLast()
                 break
             case .grammaticalFeatures(let parameterValues):
-                queryStr = "grammaticalFeatures="
-                queryStr = parameterValues.reduce(queryStr, {$0.appending("\($1),")})
-                queryStr.removeLast()
+                queryString = "grammaticalFeatures="
+                queryString = parameterValues.reduce(queryString, {$0.appending("\($1),")})
+                queryString.removeLast()
+                break
+            case .regions(let parameterValues):
+                queryString = "regions="
+                queryString = parameterValues.reduce(queryString, {$0.appending("\($1),")})
+                queryString.removeLast()
+                break
+            case .domains(let parameterValues):
+                queryString = "domains="
+                queryString = parameterValues.reduce(queryString, {$0.appending("\($1),")})
+                queryString.removeLast()
+                break
+            case .registers(let parameterValues):
+                queryString = "registers="
+                queryString = parameterValues.reduce(queryString, {$0.appending("\($1),")})
+                queryString.removeLast()
+                break
+            case .definitions(let parameterValues):
+                queryString = "definitions="
+                queryString = parameterValues.reduce(queryString, {$0.appending("\($1),")})
+                queryString.removeLast()
+                break
+            case .etymologies(let parameterValues):
+                queryString = "etymologies="
+                queryString = parameterValues.reduce(queryString, {$0.appending("\($1),")})
+                queryString.removeLast()
+                break
+            case .pronunciations(let parameterValues):
+                queryString = "pronunciations="
+                queryString = parameterValues.reduce(queryString, {$0.appending("\($1),")})
+                queryString.removeLast()
+                break
+            case .variantForms(let parameterValues):
+                queryString = "variantForms="
+                queryString = parameterValues.reduce(queryString, {$0.appending("\($1),")})
+                queryString.removeLast()
                 break
             default:
-                queryStr = String()
+                queryString = String()
             }
             
             
             if(!isLastQueryParameter){
-                queryStr = queryStr.appending(";")
+                queryString = queryString.appending(";")
             }
             
-            return queryStr
+            return queryString
         }
     }
     
-    func getAvailableFilters() -> [OxfordAPIFilter]{
+    
+    private func addParamtersValues(parameterValues: [String], toQueryString queryString: inout String){
+        queryString = parameterValues.reduce(queryString, {$0.appending("\($1),")})
+        queryString.removeLast()
+    }
+    
+   
+    
+    func getAvailableFilters() -> Set<OxfordAPIFilter>{
         switch self {
         case .entries:
-            return [.definitions([]),.domains([]),.etymologies([]),.examples([]),.grammaticalFeatures([]),.lexicalCategory([]),
-                       .pronunciations([]),.regions([]),.registers([]), .variantForms([])]
+            return Set([.definitions([]),.domains([]),.etymologies([]),.examples([]),.grammaticalFeatures([]),.lexicalCategory([]),
+                       .pronunciations([]),.regions([]),.registers([]), .variantForms([])])
         case .inflections:
-            return [.grammaticalFeatures([]),.lexicalCategory([])]
+            return Set([.grammaticalFeatures([]),.lexicalCategory([])])
         case .translations:
-            return []
+            return Set([])
         case .wordlist:
-            return [ .domains([]),.lexicalCategory([]),.regions([]),.registers([]),.translations([])]
+            return Set([ .domains([]),.lexicalCategory([]),.regions([]),.registers([]),.translations([])])
         }
     }
 }
@@ -135,7 +238,7 @@ enum OxfordLanguageRegisters: String{
     case allusive
     case archaic
     case allusively
-    case army_slang
+    case army_slang = "army_slang"
     case black_english
     case coarse_slang
     case cant

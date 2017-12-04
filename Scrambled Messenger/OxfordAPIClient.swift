@@ -33,6 +33,34 @@ class OxfordAPIClient: OxfordDictionaryAPIDelegate{
     }
     
     
+    func downloadLemmatronJSONData(forHeadWord headWord: String, andWithFilters filters: [OxfordAPIEndpoint.OxfordAPIFilter]?){
+        
+        let apiRequest = OxfordAPIRequest()
+        
+        let urlRequest = apiRequest.generateURLRequest()
+        
+        self.startDataTask(withURLRequest: urlRequest)
+        
+    }
+    
+    func downloadWordListJSONData(forDomainFilters domainFilters: [OxfordAPIEndpoint.OxfordAPIFilter], forRegionFilters regionFilters: [OxfordAPIEndpoint.OxfordAPIFilter], forRegisterFilters registerFilters: [OxfordAPIEndpoint.OxfordAPIFilter], forTranslationFilters translationFilters: [OxfordAPIEndpoint.OxfordAPIFilter], forLexicalCategoryFilters lexicalCategoryFilters: [OxfordAPIEndpoint.OxfordAPIFilter]){
+        
+        let apiRequest = OxfordAPIRequest(withDomainFilters: domainFilters, withRegionFilters: regionFilters, withRegisterFilters: registerFilters, withTranslationsFilters: translationFilters, withLexicalCategoryFilters: lexicalCategoryFilters)
+        
+        let urlRequest = apiRequest.generateURLRequest()
+        
+        self.startDataTask(withURLRequest: urlRequest)
+    }
+    
+    func downloadDictionaryEntryJSONData(forWord word: String, withFilters filters: [OxfordAPIEndpoint.OxfordAPIFilter]?){
+        
+        let apiRequest = OxfordAPIRequest(withWord: word, withFilters: filters)
+
+        let urlRequest = apiRequest.generateURLRequest()
+        
+        self.startDataTask(withURLRequest: urlRequest)
+    }
+    
     func downloadExampleSentencesJSONData(forWord word: String){
         
         let apiRequest = OxfordAPIRequest(withWord: word, hasRequestedExampleSentencesQuery: true, forLanguage: OxfordAPILanguage.English)
@@ -51,6 +79,28 @@ class OxfordAPIClient: OxfordDictionaryAPIDelegate{
         self.startDataTask(withURLRequest: urlRequest)
     }
     
+    
+    func downloadWordlistJSONDataWithValidation(forFilters filters: [OxfordAPIEndpoint.OxfordAPIFilter]?, forLanguage language: OxfordAPILanguage = OxfordAPILanguage.English){
+        
+        let apiRequest = OxfordAPIRequest(withEndpoint: OxfordAPIEndpoint.wordlist, withQueryWord: String(), withFilters: filters, withQueryLanguage: language)
+        
+        do {
+            
+            let urlRequest = try apiRequest.generateValidatedURLRequest()
+            
+            self.startDataTask(withURLRequest: urlRequest)
+
+        } catch let error as NSError {
+            
+            guard let apiDelegate = self.delegate else {
+                fatalError("Error: no delegate specified for Oxford API download task")
+            }
+            
+            apiDelegate.didFailToConnectToEndpoint(withError: error)
+        }
+        
+        
+    }
     
     /** Wrapper function for executing aynchronous download of JSON data from Oxford Dictionary API **/
     

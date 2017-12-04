@@ -42,6 +42,102 @@ class OxfordAPIClientAsynchronousTests: XCTestCase, OxfordDictionaryAPIDelegate 
         super.tearDown()
     }
     
+    func testWordListAPIRequesWithValidationt(){
+        
+        promise = expectation(description: "Promise fulfilled: JSON data for example sentences API request received and serialized successfully, http status code: 200")
+        
+        sharedClient.setOxfordDictionaryAPIClientDelegate(with: self)
+        
+        
+        
+        sharedClient.downloadWordlistJSONDataWithValidation(forFilters: [
+            OxfordAPIEndpoint.OxfordAPIFilter.registers([
+                OxfordLanguageRegisters.archaic.rawValue
+                ])
+            ])
+        
+        waitForExpectations(timeout: 20.00, handler: nil)
+        
+    }
+    
+    func testWordListWithRegisterAndRegionFiltersAPIRequest(){
+        
+        
+        promise = expectation(description: "Promise fulfilled: JSON data for example sentences API request received and serialized successfully, http status code: 200")
+        
+        sharedClient.setOxfordDictionaryAPIClientDelegate(with: self)
+        
+        
+        
+        sharedClient.downloadWordListJSONData(
+            forDomainFilters: [],
+            forRegionFilters: [OxfordAPIEndpoint.OxfordAPIFilter.regions([OxfordRegion.us.rawValue])],
+            forRegisterFilters: [OxfordAPIEndpoint.OxfordAPIFilter.registers([OxfordLanguageRegisters.dialect.rawValue])],
+            forTranslationFilters: [],
+            forLexicalCategoryFilters: [])
+        
+        waitForExpectations(timeout: 20.00, handler: nil)
+        
+    }
+    
+    
+    
+    func testWordListWithRegisterFiltersAPIRequest(){
+        
+        
+        promise = expectation(description: "Promise fulfilled: JSON data for example sentences API request received and serialized successfully, http status code: 200")
+        
+        sharedClient.setOxfordDictionaryAPIClientDelegate(with: self)
+        
+        
+        
+        sharedClient.downloadWordListJSONData(
+            forDomainFilters: [],
+            forRegionFilters: [],
+            forRegisterFilters: [OxfordAPIEndpoint.OxfordAPIFilter.registers([OxfordLanguageRegisters.army_slang.rawValue])],
+            forTranslationFilters: [],
+            forLexicalCategoryFilters: [])
+        
+        waitForExpectations(timeout: 20.00, handler: nil)
+        
+    }
+    
+    func testWordListWithDomainFiltersAPIRequest(){
+        
+        
+        promise = expectation(description: "Promise fulfilled: JSON data for example sentences API request received and serialized successfully, http status code: 200")
+        
+        sharedClient.setOxfordDictionaryAPIClientDelegate(with: self)
+        
+    
+        
+        sharedClient.downloadWordListJSONData(
+            forDomainFilters: [OxfordAPIEndpoint.OxfordAPIFilter.domains([OxfordDomains.anatomy.rawValue])],   forRegionFilters: [],
+            forRegisterFilters: [],
+          forTranslationFilters: [],
+          forLexicalCategoryFilters: [])
+        
+        waitForExpectations(timeout: 20.00, handler: nil)
+
+    }
+    
+    func testDictionaryEntryWithRegionFiltersAPIRequest() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        
+        promise = expectation(description: "Promise fulfilled: JSON data for example sentences API request received and serialized successfully, http status code: 200")
+        
+        sharedClient.setOxfordDictionaryAPIClientDelegate(with: self)
+       
+        sharedClient.downloadDictionaryEntryJSONData(forWord: "love", withFilters: [OxfordAPIEndpoint.OxfordAPIFilter.regions([OxfordRegion.us.rawValue])])
+        
+        waitForExpectations(timeout: 20.00, handler: nil)
+        
+        
+    }
+    
+    
     func testExampleSentencesAPIRequest() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.

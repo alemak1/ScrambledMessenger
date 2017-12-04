@@ -29,6 +29,17 @@ struct OxfordAPIRequest{
     
     /** Different Initializers are used to restrict the range of possible URL strings that can be generated **/
     
+    init(withWord queryWord: String, withFilters filters: [OxfordAPIEndpoint.OxfordAPIFilter]?,forLanguage queryLanguage: OxfordAPILanguage = .English){
+        
+        self.endpoint = OxfordAPIEndpoint.entries
+        self.word = queryWord
+        self.language = OxfordAPILanguage.English
+        self.filters = filters
+        
+        self.hasRequestedExampleSentences = false
+        self.hasRequestedSynonyms = false
+        self.hasRequestAntonyms = false
+    }
     
     
     init(withWord queryWord: String, hasRequestedExampleSentencesQuery: Bool,forLanguage queryLanguage: OxfordAPILanguage = .English){
@@ -55,7 +66,38 @@ struct OxfordAPIRequest{
         self.hasRequestAntonyms = hasRequestedAntonymsQuery
     }
     
+
+    
+    init(withDomainFilters domainFilters: [OxfordAPIEndpoint.OxfordAPIFilter], withRegionFilters regionFilters: [OxfordAPIEndpoint.OxfordAPIFilter], withRegisterFilters registerFilters: [OxfordAPIEndpoint.OxfordAPIFilter], withTranslationsFilters translationsFilters: [OxfordAPIEndpoint.OxfordAPIFilter], withLexicalCategoryFilters lexicalCategoryFilters: [OxfordAPIEndpoint.OxfordAPIFilter], withQueryLanguage queryLanguage: OxfordAPILanguage = .English){
+        
+        
+        self.endpoint = OxfordAPIEndpoint.wordlist
+        self.word = String()
+        self.filters = domainFilters + regionFilters + registerFilters + translationsFilters + lexicalCategoryFilters
+        self.language = queryLanguage
+        
+        self.hasRequestedExampleSentences = false
+        self.hasRequestAntonyms = false
+        self.hasRequestedSynonyms = false
+        
+    }
+    
+    
+    init(withHeadword headWord: String, withFilters queryFilters: [OxfordAPIEndpoint.OxfordAPIFilter]?, withQueryLanguage queryLanguage: OxfordAPILanguage = .English){
+        
+        self.endpoint = OxfordAPIEndpoint.inflections
+        self.word = headWord
+        self.filters = queryFilters
+        self.language = queryLanguage
+        
+        self.hasRequestedExampleSentences = false
+        self.hasRequestAntonyms = false
+        self.hasRequestedSynonyms = false
+    }
+    
+    
     init(withEndpoint queryEndpoint: OxfordAPIEndpoint, withQueryWord queryWord: String, withFilters queryFilters: [OxfordAPIEndpoint.OxfordAPIFilter]?, withQueryLanguage queryLanguage: OxfordAPILanguage = .English){
+        
         
         self.endpoint = queryEndpoint
         self.word = queryWord
@@ -65,6 +107,7 @@ struct OxfordAPIRequest{
         self.hasRequestedExampleSentences = false
         self.hasRequestAntonyms = false
         self.hasRequestedSynonyms = false
+        
     }
     
     /** Generic default initializers with placeholder values for variables is provided for convenience  **/
@@ -81,14 +124,28 @@ struct OxfordAPIRequest{
     }
     
     
+    func generateValidatedURLRequest() throws -> URLRequest{
+        
+       
+        guard hasValidFilters(filters: self.filters, forEndpoint: self.endpoint) else {
+            
+            throw NSError(domain: "OxfordAPIClientErrorDomain", code: 0, userInfo: nil)
+            
+        }
+        
+        let urlString = getURLString()
+        
+        let url = URL(string: urlString)!
+        
+        return getURLRequest(forURL: url)
+    }
+    
     func generateURLRequest() -> URLRequest{
         
         let urlString = getURLString()
         
         let url = URL(string: urlString)!
         
-        let urlRequest = getURLRequest(forURL: url)
-    
         return getURLRequest(forURL: url)
     }
     
@@ -122,7 +179,28 @@ struct OxfordAPIRequest{
         return word_id
     }
     
-    private func validateFilterParameters(){
+    private func hasValidFilters(filters: [OxfordAPIEndpoint.OxfordAPIFilter]?,forEndpoint endpoint: OxfordAPIEndpoint) -> Bool {
+        
+        if(filters == nil || (filters != nil && filters!.isEmpty)){
+            return true
+        }
+        
+        let toCheckFilters = filters!
+        
+        let allowableFilterSet = endpoint.getAvailableFilters()
+
+        print("Checking if the filters passed in are allowable")
+        
+        for filter in toCheckFilters{
+            print("Testing the filter: \(filter.getDebugName())")
+            if !allowableFilterSet.contains(filter){
+                print("The allowable filters don't contain: \(filter.getDebugName())")
+                return false
+            }
+        }
+        
+        return true
+        
         
     }
     
@@ -152,6 +230,13 @@ struct OxfordAPIRequest{
                 
             } else {
                 //TODO: Add filters for register,domain,region,etc
+                
+                let allFilters = self.filters!
+                
+                addFilters(filters: allFilters, toURLString: &languageURLString)
+                
+                return languageURLString
+
             }
             
         } else {
@@ -192,6 +277,13 @@ struct OxfordAPIRequest{
                 } else if(self.filters != nil) {
                     //Add filters for dictionary entries request for the given word
                     
+                    let allFilters = self.filters!
+                    
+                    addFilters(filters: allFilters, toURLString: &wordURLString)
+                   
+                    return wordURLString
+                     
+                    
                     
                 } else {
                     
@@ -205,6 +297,11 @@ struct OxfordAPIRequest{
                 
                 if(self.filters != nil){
                     
+                    let allFilters = self.filters!
+                    
+                    addFilters(filters: allFilters, toURLString: &wordURLString)
+                    
+                    return wordURLString
                 }
             }
             
@@ -215,4 +312,26 @@ struct OxfordAPIRequest{
     
     
 
+    private func addFilters(filters: [OxfordAPIEndpoint.OxfordAPIFilter], toURLString urlString: inout String){
+
+        
+        if(filters.isEmpty){
+            return
+        }
+        
+        filters.forEach({
+            var filterString = $0.getQueryParameterString(isLastQueryParameter: false)
+            urlString = urlString.appending(filterString)
+        })
+        
+        
+        repeat{
+            
+            if(urlString.last! == ";"){
+                urlString.removeLast()
+            }
+            
+        }while(urlString.last! == ";")
+        
+    }
 }
